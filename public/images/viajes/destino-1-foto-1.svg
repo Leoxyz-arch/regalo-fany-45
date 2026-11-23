@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Destino 1 - foto de prueba">
+  
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#fbd7ae"/>
+        <stop offset="52%" stop-color="#f19a74"/>
+        <stop offset="100%" stop-color="#8e5068"/>
+      </linearGradient>
+      <radialGradient id="sunGlow">
+        <stop offset="0%" stop-color="#fff3cf" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#fff3cf" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#4d8b92"/>
+        <stop offset="100%" stop-color="#123f4f"/>
+      </linearGradient>
+      <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#e7bd86"/>
+        <stop offset="100%" stop-color="#c98e5f"/>
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="900" fill="url(#sky)"/>
+    <circle cx="828" cy="388" r="210" fill="url(#sunGlow)"/>
+    <circle cx="828" cy="388" r="72" fill="#fff3cf" opacity="0.94"/>
+    <g fill="#ffe8d2" opacity="0.28">
+      <ellipse cx="250" cy="210" rx="150" ry="26"/>
+      <ellipse cx="360" cy="236" rx="105" ry="18"/>
+      <ellipse cx="720" cy="150" rx="120" ry="20"/>
+    </g>
+    <rect y="505" width="1200" height="395" fill="url(#sea)"/>
+    <g stroke="#fff3cf" stroke-width="4" stroke-linecap="round" opacity="0.55">
+      <line x1="733" y1="530" x2="923" y2="530"/>
+      <line x1="763" y1="558" x2="893" y2="558"/>
+      <line x1="793" y1="590" x2="863" y2="590"/>
+      <line x1="738" y1="625" x2="808" y2="625"/>
+      <line x1="846" y1="662" x2="908" y2="662"/>
+    </g>
+    <path d="M0 515 Q 140 456 290 505 Q 390 536 500 520 L 500 560 L 0 560 Z" fill="#183d40" opacity="0.8"/>
+    
+    <g transform="translate(238 300) scale(0.82)" fill="#183d40" opacity="0.86">
+      <path d="M40 220 C 33 150 41 80 62 12 L 80 15 C 57 82 52 150 60 220 Z"/>
+      <path d="M71 14 C 22 -10 -30 -3 -70 30 C -26 12 21 17 65 36 Z"/>
+      <path d="M71 14 C 60 -46 20 -82 -34 -97 C 13 -66 46 -34 58 22 Z"/>
+      <path d="M71 14 C 108 -29 154 -44 204 -31 C 157 -16 116 5 79 32 Z"/>
+      <path d="M71 14 C 117 6 163 27 194 68 C 148 42 107 32 63 32 Z"/>
+      <path d="M71 14 C 30 31 10 72 8 118 C 24 76 51 45 74 32 Z"/>
+      <circle cx="72" cy="20" r="13"/>
+    </g>
+    <path d="M0 720 Q 220 650 520 690 Q 850 734 1200 664 L1200 900 L0 900Z" fill="url(#sand)"/>
+    <path d="M0 722 Q 260 658 540 694 Q 860 736 1200 666" fill="none" stroke="#fff0d2" stroke-width="10" opacity="0.45"/>
+    <g stroke="#123f4f" stroke-width="3" opacity="0.25" fill="none">
+      <path d="M60 792 q 80 -16 160 0 q 80 16 160 0"/>
+      <path d="M520 842 q 80 -14 160 0 q 80 14 160 0"/>
+      <path d="M870 780 q 70 -12 140 0"/>
+    </g>
+    
+    <g transform="translate(1000 640) scale(1.22)" fill="#183d40" opacity="0.96">
+      <path d="M40 220 C 33 150 41 80 62 12 L 80 15 C 57 82 52 150 60 220 Z"/>
+      <path d="M71 14 C 22 -10 -30 -3 -70 30 C -26 12 21 17 65 36 Z"/>
+      <path d="M71 14 C 60 -46 20 -82 -34 -97 C 13 -66 46 -34 58 22 Z"/>
+      <path d="M71 14 C 108 -29 154 -44 204 -31 C 157 -16 116 5 79 32 Z"/>
+      <path d="M71 14 C 117 6 163 27 194 68 C 148 42 107 32 63 32 Z"/>
+      <path d="M71 14 C 30 31 10 72 8 118 C 24 76 51 45 74 32 Z"/>
+      <circle cx="72" cy="20" r="13"/>
+    </g>
+    
+    <g fill="none" stroke="#183d40" stroke-width="3" stroke-linecap="round" opacity="0.48">
+      <path d="M700 270 q 10 -9 20 0 q 10 -9 20 0"/>
+      <path d="M781.2 236 q 7 -6 14 0 q 7 -6 14 0"/>
+      <path d="M630.4 218 q 6 -5 12 0 q 6 -5 12 0"/>
+    </g>
+  
+  <defs>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="52%" stop-color="#140d09" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#140d09" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#shade)"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <rect x="52" y="46" width="178" height="42" rx="21" fill="#140d09" opacity="0.34"/>
+    <text x="76" y="75" font-size="19" letter-spacing="4" fill="#ffebc4" opacity="0.94">RECUERDO 1</text>
+    <text x="64" y="790" font-size="58" font-weight="bold" fill="#fff6e3">Destino 1</text>
+    <text x="66" y="834" font-size="24" fill="#f8e3b9" opacity="0.76">Foto de prueba 1 · Reemplazar</text>
+  </g>
+</svg>

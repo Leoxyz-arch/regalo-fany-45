@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Destino 4 - foto de prueba">
+  
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#e8f1d6"/>
+        <stop offset="60%" stop-color="#c0d6a9"/>
+        <stop offset="100%" stop-color="#87a97c"/>
+      </linearGradient>
+      <radialGradient id="sunGlow">
+        <stop offset="0%" stop-color="#fff7d8" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#fff7d8" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1200" height="900" fill="url(#sky)"/>
+    <circle cx="896" cy="270" r="210" fill="url(#sunGlow)"/>
+    <circle cx="896" cy="270" r="62" fill="#fff7d8" opacity="0.9"/>
+    <g fill="#ffffff" opacity="0.26">
+      <ellipse cx="260" cy="165" rx="150" ry="24"/>
+      <ellipse cx="380" cy="190" rx="100" ry="17"/>
+    </g>
+    <path d="M0 560 Q 180 460 390 535 Q 590 605 790 515 Q 990 430 1200 535 L1200 900 L0 900Z" fill="#8eac7e"/>
+    <path d="M0 640 Q 230 540 470 620 Q 700 695 920 585 Q 1060 518 1200 575 L1200 900 L0 900Z" fill="#638d68"/>
+    <g stroke="#c6b46c" stroke-width="4" fill="none" opacity="0.3">
+      <path d="M-40 760 Q 300 690 620 760 Q 910 822 1240 742"/>
+      <path d="M-40 806 Q 300 736 620 806 Q 910 868 1240 788"/>
+      <path d="M-40 852 Q 300 782 620 852 Q 910 914 1240 834"/>
+    </g>
+    <path d="M0 735 Q 260 630 520 710 Q 800 795 1200 660 L1200 900 L0 900Z" fill="#3f6b53"/>
+    <g>
+      
+    <g transform="translate(160 720) scale(0.72)" fill="#214a3d">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+      
+    <g transform="translate(206 736) scale(0.56)" fill="#214a3d">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+      
+    <g transform="translate(905 708) scale(0.85)" fill="#214a3d">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+      
+    <g transform="translate(958 730) scale(0.62)" fill="#214a3d">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+      
+    <g transform="translate(1012 718) scale(0.74)" fill="#214a3d">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+    </g>
+    <g transform="translate(625 642)">
+      <rect x="0" y="34" width="112" height="62" fill="#b58a61"/>
+      <path d="M-14 36 L 56 -18 L 126 36 Z" fill="#7b4c3d"/>
+      <rect x="40" y="56" width="26" height="40" fill="#5f3a2e"/>
+      <rect x="12" y="52" width="18" height="18" fill="#ffdda0" opacity="0.8"/>
+      <rect x="80" y="52" width="18" height="18" fill="#ffdda0" opacity="0.8"/>
+      <rect x="86" y="-6" width="12" height="30" fill="#6f4638"/>
+    </g>
+    
+    <g fill="none" stroke="#214a3d" stroke-width="3" stroke-linecap="round" opacity="0.42">
+      <path d="M310 310 q 10 -9 20 0 q 10 -9 20 0"/>
+      <path d="M409.4 276 q 7 -6 14 0 q 7 -6 14 0"/>
+      <path d="M224.8 258 q 6 -5 12 0 q 6 -5 12 0"/>
+    </g>
+  
+  <defs>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="52%" stop-color="#140d09" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#140d09" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#shade)"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <rect x="52" y="46" width="178" height="42" rx="21" fill="#140d09" opacity="0.34"/>
+    <text x="76" y="75" font-size="19" letter-spacing="4" fill="#ffebc4" opacity="0.94">RECUERDO 3</text>
+    <text x="64" y="790" font-size="58" font-weight="bold" fill="#fff6e3">Destino 4</text>
+    <text x="66" y="834" font-size="24" fill="#f8e3b9" opacity="0.76">Foto de prueba 3 · Reemplazar</text>
+  </g>
+</svg>

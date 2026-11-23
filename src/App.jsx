@@ -5,6 +5,7 @@ import KeyFragmentModal from './components/KeyFragmentModal';
 import KeyMergeModal from './components/KeyMergeModal';
 import CelebrationModal from './components/CelebrationModal';
 import LockedToast from './components/LockedToast';
+import ViajesView from './views/ViajesView';
 import { HOTSPOTS } from './data/config';
 import { soundManager } from './utils/audio';
 
@@ -18,6 +19,9 @@ export default function App() {
   // Key fragments inventory
   const [hasLeftKey, setHasLeftKey] = useState(false);
   const [hasRightKey, setHasRightKey] = useState(false);
+
+  // Viajes album: Top 3 chosen by mom (persists while exploring the room)
+  const [viajesTop3, setViajesTop3] = useState([null, null, null]);
 
   // Modal & Flow states
   const [activeDoorModal, setActiveDoorModal] = useState(null); // 'viajes' | 'familia' | null
@@ -95,6 +99,20 @@ export default function App() {
     setActiveDoorModal(null);
   };
 
+  // Award the first fragment when the Viajes Top 3 is confirmed
+  const handleAwardViajesKey = () => {
+    if (!hasLeftKey) {
+      soundManager.playKeyFound();
+      setHasLeftKey(true);
+    }
+  };
+
+  // Close the Viajes room and return to the candle room
+  const handleCloseViajes = () => {
+    soundManager.playClick();
+    setActiveDoorModal(null);
+  };
+
   // Complete Key Merge & Transition to Celebration
   const handleCompleteMerge = () => {
     setIsMergingKeys(false);
@@ -112,6 +130,7 @@ export default function App() {
     setActiveCandle(1);
     setHasLeftKey(false);
     setHasRightKey(false);
+    setViajesTop3([null, null, null]);
     setActiveDoorModal(null);
     setIsMergingKeys(false);
     setIsCelebrating(false);
@@ -150,8 +169,19 @@ export default function App() {
         />
       </main>
 
-      {/* Side Door Key Fragment Modals */}
-      {activeDoorModal && (
+      {/* Door 1: Viajes Album Experience */}
+      {activeDoorModal === 'viajes' && (
+        <ViajesView
+          top3={viajesTop3}
+          onTop3Change={setViajesTop3}
+          hasKey={hasLeftKey}
+          onAwardKey={handleAwardViajesKey}
+          onBack={handleCloseViajes}
+        />
+      )}
+
+      {/* Side Door Key Fragment Modal (Familia placeholder) */}
+      {activeDoorModal && activeDoorModal !== 'viajes' && (
         <KeyFragmentModal
           door={HOTSPOTS.doors[activeDoorModal]}
           isOpen={!!activeDoorModal}

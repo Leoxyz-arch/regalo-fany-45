@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Destino 5 - foto de prueba">
+  
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f9ddaa"/>
+        <stop offset="55%" stop-color="#eba670"/>
+        <stop offset="100%" stop-color="#c3665c"/>
+      </linearGradient>
+      <radialGradient id="sunGlow">
+        <stop offset="0%" stop-color="#fff4d3" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#fff4d3" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1200" height="900" fill="url(#sky)"/>
+    <circle cx="826" cy="355" r="270" fill="url(#sunGlow)"/>
+    <circle cx="826" cy="355" r="95" fill="#fff4d3" opacity="0.9"/>
+    <path d="M0 610 Q 220 500 470 585 Q 700 665 940 545 Q 1080 480 1200 530 L1200 900 L0 900Z" fill="#dfa77b"/>
+    <path d="M0 720 Q 180 610 430 690 Q 690 776 920 645 Q 1070 560 1200 620 L1200 900 L0 900Z" fill="#c47d5d"/>
+    <path d="M0 820 Q 250 700 520 780 Q 800 865 1200 730 L1200 900 L0 900Z" fill="#965143"/>
+    <g stroke="#965143" stroke-width="3" opacity="0.22" fill="none">
+      <path d="M60 772 q 130 -20 260 0"/>
+      <path d="M720 800 q 120 -18 240 0"/>
+    </g>
+    <g transform="translate(260 680)" fill="#5d4c3c">
+      <rect x="-12" y="0" width="24" height="180" rx="12"/>
+      <path d="M-12 72 L-46 72 L-46 20 L-30 20 L-30 56 L-12 56 Z"/>
+      <path d="M12 105 L48 105 L48 52 L32 52 L32 89 L12 89 Z"/>
+    </g>
+    
+    <g fill="none" stroke="#5d4c3c" stroke-width="3" stroke-linecap="round" opacity="0.42">
+      <path d="M520 245 q 10 -9 20 0 q 10 -9 20 0"/>
+      <path d="M632 211 q 7 -6 14 0 q 7 -6 14 0"/>
+      <path d="M424 193 q 6 -5 12 0 q 6 -5 12 0"/>
+    </g>
+  
+  <defs>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="52%" stop-color="#140d09" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#140d09" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#shade)"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <rect x="52" y="46" width="178" height="42" rx="21" fill="#140d09" opacity="0.34"/>
+    <text x="76" y="75" font-size="19" letter-spacing="4" fill="#ffebc4" opacity="0.94">RECUERDO 3</text>
+    <text x="64" y="790" font-size="58" font-weight="bold" fill="#fff6e3">Destino 5</text>
+    <text x="66" y="834" font-size="24" fill="#f8e3b9" opacity="0.76">Foto de prueba 3 · Reemplazar</text>
+  </g>
+</svg>

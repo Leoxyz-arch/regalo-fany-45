@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Destino 2 - foto de prueba">
+  
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#dbe9dd"/>
+        <stop offset="58%" stop-color="#a5c0b5"/>
+        <stop offset="100%" stop-color="#668489"/>
+      </linearGradient>
+      <radialGradient id="sunGlow">
+        <stop offset="0%" stop-color="#fff4d6" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#fff4d6" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1200" height="900" fill="url(#sky)"/>
+    <circle cx="838" cy="305" r="230" fill="url(#sunGlow)"/>
+    <circle cx="838" cy="305" r="65" fill="#fff4d6" opacity="0.9"/>
+    <g fill="#ffffff" opacity="0.22">
+      <ellipse cx="240" cy="160" rx="170" ry="26"/>
+      <ellipse cx="1000" cy="210" rx="140" ry="22"/>
+    </g>
+    <path d="M0 635 L 130 455 L 260 570 L 420 332 L 585 566 L 730 400 L 870 570 L 1030 360 L 1200 585 L1200 900 L0 900Z" fill="#63858b"/>
+    <g fill="#e9f0e8" opacity="0.82">
+      <path d="M420 332 L 482 430 L 445 414 L 420 446 L 394 414 L 361 427 Z"/>
+      <path d="M1030 360 L 1080 445 L 1050 432 L 1030 458 L 1008 431 L 984 442 Z"/>
+      <path d="M130 455 L 174 520 L 148 510 L 130 530 L 112 508 L 92 517 Z"/>
+    </g>
+    <path d="M0 690 L 165 535 L 330 650 L 500 480 L 680 665 L 850 505 L 1020 660 L 1200 520 L1200 900 L0 900Z" fill="#3f6270"/>
+    <path d="M0 770 Q 210 655 430 720 Q 660 790 860 706 Q 1030 638 1200 700 L1200 900 L0 900Z" fill="#203f48"/>
+    <g opacity="0.9">
+      
+    <g transform="translate(110 844) scale(1.05)" fill="#16342f">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+      
+    <g transform="translate(168 868) scale(0.78)" fill="#16342f">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+      
+    <g transform="translate(1035 842) scale(1.15)" fill="#16342f">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+      
+    <g transform="translate(1100 870) scale(0.8)" fill="#16342f">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+      
+    <g transform="translate(948 872) scale(0.62)" fill="#16342f">
+      <rect x="-3" y="0" width="6" height="32" rx="3"/>
+      <path d="M0 -84 L23 -32 L-23 -32 Z"/>
+      <path d="M0 -58 L28 -4 L-28 -4 Z"/>
+      <path d="M0 -32 L33 28 L-33 28 Z"/>
+    </g>
+    </g>
+    
+    <g fill="none" stroke="#203f48" stroke-width="3" stroke-linecap="round" opacity="0.4">
+      <path d="M680 225 q 10 -9 20 0 q 10 -9 20 0"/>
+      <path d="M769.6 191 q 7 -6 14 0 q 7 -6 14 0"/>
+      <path d="M603.2 173 q 6 -5 12 0 q 6 -5 12 0"/>
+    </g>
+  
+  <defs>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="52%" stop-color="#140d09" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#140d09" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#shade)"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <rect x="52" y="46" width="178" height="42" rx="21" fill="#140d09" opacity="0.34"/>
+    <text x="76" y="75" font-size="19" letter-spacing="4" fill="#ffebc4" opacity="0.94">RECUERDO 1</text>
+    <text x="64" y="790" font-size="58" font-weight="bold" fill="#fff6e3">Destino 2</text>
+    <text x="66" y="834" font-size="24" fill="#f8e3b9" opacity="0.76">Foto de prueba 1 · Reemplazar</text>
+  </g>
+</svg>
