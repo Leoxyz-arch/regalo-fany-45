@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowLeft,
@@ -17,6 +17,67 @@ import LibroViajeModal from '../components/viajes/LibroViajeModal';
 import RecompensaFragmento from '../components/viajes/RecompensaFragmento';
 
 const MEDALLAS = ['🥇', '🥈', '🥉'];
+
+// Las portadas muy panorámicas y de baja resolución se ven borrosas si se
+// recortan para llenar la tarjeta. En ese caso se muestran completas y nítidas
+// sobre un fondo difuminado de la misma foto.
+function PortadaTarjeta({ portada, titulo }) {
+  const imgRef = useRef(null);
+  const [modo, setModo] = useState('cover');
+
+  const decidirEncuadre = useCallback(() => {
+    const img = imgRef.current;
+    const tarjeta = img?.closest('[data-tarjeta-viaje]');
+    if (!img || !tarjeta || !img.naturalWidth || !img.naturalHeight) return;
+
+    const { width, height } = tarjeta.getBoundingClientRect();
+    const escala = Math.max(
+      width / img.naturalWidth,
+      height / img.naturalHeight,
+    );
+
+    // Si habría que ampliarla más de 1.35x para llenar la tarjeta, no la
+    // estiramos: la mostramos completa.
+    setModo(escala > 1.35 ? 'contain' : 'cover');
+  }, []);
+
+  useEffect(() => {
+    const tarjeta = imgRef.current?.closest('[data-tarjeta-viaje]');
+    if (!tarjeta || typeof ResizeObserver === 'undefined') return;
+
+    const observer = new ResizeObserver(decidirEncuadre);
+    observer.observe(tarjeta);
+    decidirEncuadre();
+
+    return () => observer.disconnect();
+  }, [decidirEncuadre]);
+
+  return (
+    <>
+      {modo === 'contain' && (
+        <img
+          src={portada}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full scale-110 object-cover opacity-55 blur-2xl"
+          draggable={false}
+        />
+      )}
+      <img
+        ref={imgRef}
+        src={portada}
+        alt={`Portada de ${titulo}`}
+        onLoad={decidirEncuadre}
+        className={`absolute inset-0 h-full w-full ${
+          modo === 'contain'
+            ? 'object-contain p-2'
+            : 'object-cover transition-transform duration-700 ease-out group-hover:scale-105'
+        }`}
+        draggable={false}
+      />
+    </>
+  );
+}
 
 export default function ViajesView({
   top3,
@@ -267,12 +328,11 @@ export default function ViajesView({
                         : 'border-white/10 hover:border-amber-200/45'
                     }`}
                     aria-label={`Abrir el libro de ${destino.titulo}`}
+                    data-tarjeta-viaje
                   >
-                    <img
-                      src={destino.portada}
-                      alt={`Portada de ${destino.titulo}`}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      draggable={false}
+                    <PortadaTarjeta
+                      portada={destino.portada}
+                      titulo={destino.titulo}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-stone-950/5" />
 
