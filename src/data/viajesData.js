@@ -20,6 +20,9 @@ const trujillo = (fileName) => viajeAsset(`trujillo/${fileName}`);
 const ica = (fileName) => viajeAsset(`ica/${fileName}`);
 const piura = (fileName) => viajeAsset(`piura/${fileName}`);
 const cajamarca = (fileName) => viajeAsset(`cajamarca/${fileName}`);
+const pacasmayo = (fileName) => viajeAsset(`pacasmayo/${fileName}`);
+const puntasal = (fileName) => viajeAsset(`puntasal/${fileName}`);
+const malabrigo = (fileName) => viajeAsset(`malabrigo/${fileName}`);
 
 export const destinosViajes = [
   {
@@ -310,12 +313,143 @@ export const destinosViajes = [
     titulo: 'Lima',
   },
   {
-    id: 'malabrigo',
-    titulo: 'Malabrigo',
+    id: 'pacasmayo',
+    titulo: 'Pacasmayo',
+    fecha: 'Calma y playa en familia',
+    lugar: 'Pacasmayo, La Libertad',
+    portada: pacasmayo('portada.png'),
+    fotos: [
+      {
+        tipo: 'foto',
+        titulo: 'El lugar de los gringos',
+        url: pacasmayo('imagen1.jpg'),
+        descripcion:
+          '¡Pacasmayo! El lugar donde siempre vemos pasar a los gringos, un sitio de calma y con una de las playas más activas para pasar el rato. Aquí el plan es simple: mirar el mar, caminar sin apuro y quedarse hasta que el sol se esconda.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'La casa del tío Arturo',
+        url: pacasmayo('imagen2.jpg'),
+        descripcion:
+          'Siempre la pasamos en familia: hacemos actividades de playa y nos atrevemos a todo, ¡hasta mi primo se atreve a pescar! Cada vez que vamos, la casa de mi tío Arturo es más rústica y sorprendente, construida a mano. Es la clase de playa cómoda a la que siempre queremos volver.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Como una famosa',
+        url: pacasmayo('imagen3.jpg'),
+        descripcion:
+          'Donde fueron muchos famosos: mi hermosa madre posando en una de las casas más grandes que hay, y al lado está el hotel más caro que hemos visto. Ojalá algún día podamos hospedarnos ahí y conocer a los gringos. Mientras tanto, la foto en la escalera sale gratis y queda igual de elegante.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Color de Pacasmayo',
+        url: pacasmayo('imagen4.jpg'),
+        descripcion:
+          'Colorido, playero, soleado y con más cosas por explorar. Vemos cómo la ciudad crece cada vez más, ¡y todavía nos falta conocer el faro! De vacaciones vamos a pasarlo genial; la próxima prometemos subir al faro y quedarnos hasta el atardecer.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'La sazón de la tía Rosita',
+        url: pacasmayo('imagen5.jpg'),
+        descripcion:
+          'La casa de mi tío Arturo es una de las más sorprendentes que hay. La pasamos tan bien en familia con mi tía Rosita: su sazón es única y tan rústica que cocina a la antigua un pez recién pescado. Todo natural, como debe ser: cero grasa. Y con esa sazón, hasta el que no come pescado repite.',
+      },
+    ],
   },
   {
     id: 'puntasal',
     titulo: 'Punta Sal',
+    fecha: 'El Decameron y sus recuerdos',
+    lugar: 'Punta Sal, Tumbes',
+    portada: puntasal('portada.jpg'),
+    fotos: [
+      {
+        tipo: 'foto',
+        titulo: 'Como buenos pitucos',
+        url: puntasal('imagen1.jpg'),
+        descripcion:
+          '¡El Decameron! Fuimos como buenos pitucos más de dos veces: de las mejores actividades y lugares para pasar el tiempo, con actividades tan finas y experiencias de gente con plata. De las mejores vacaciones que hemos tenido; una lástima que solo hayan sido pocos días. Pero pocos días bien aprovechados valen más que una semana aburrida.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Las promos y Halloween',
+        url: puntasal('imagen2.jpg'),
+        descripcion:
+          'Pasamos las dos promos: dos mías y una de tu hija. ¿Te imaginas que vayamos a la promo de tu hija para cerrar el año otra vez? Jaja, no nos aburrimos y ya conocemos todo. Pasamos muchos eventos, y Halloween fue el mejor: muy bien ambientado. Ya nos sabemos el recorrido, pero igual caemos con disfraz.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Ceviche y madrugada',
+        url: puntasal('imagen3.jpg'),
+        descripcion:
+          'Pescamos, comimos ceviche con la propia pesca y disfrutamos hasta la madrugada. ¡Que no falten los zorros que había! De las mejores actividades, donde dormir es la peor opción. El mar, la caña y la paciencia: la combinación perfecta para no querer volver a la habitación.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Aloha nocturno',
+        url: puntasal('imagen4.jpg'),
+        descripcion:
+          'De noche es espectacular: de los mejores ambientes, ¡aloha! Experiencia hasta con shows. Imagínate ir con tus amigas una noche frente al mar o a la piscina, tomando y disfrutando. Aquí la noche no se duerme, se disfruta.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Los shampoos de mi hermana',
+        url: puntasal('imagen5.jpg'),
+        descripcion:
+          'Mi hermana y sus shampoos: siempre que puede se lleva miles, algunos con agua de allá y otros con piedritas. ¡Que no falte la esencia! Aquí la vemos recuperando energía después del sol, con la maleta llena de recuerdos (y de botellitas).',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Zona VIP',
+        url: puntasal('imagen6.webp'),
+        descripcion:
+          'Aunque hayamos ido en situaciones especiales y no fuimos a la mera ciudad, es una de las mejores experiencias de pocos días. Me alegra que tus hijos la hayan podido pasar bien; esperemos que la próxima vez la pasemos en familia, ¡y en zona VIP! Con cuatrimoto incluida, el plan ya se veía prometedor.',
+      },
+    ],
+  },
+  {
+    id: 'malabrigo',
+    titulo: 'Puerto Malabrigo',
+    fecha: 'Olas largas y buena comida',
+    lugar: 'Puerto Malabrigo, La Libertad',
+    portada: malabrigo('portada.jpg'),
+    fotos: [
+      {
+        tipo: 'foto',
+        titulo: 'Las olas más largas',
+        url: malabrigo('imagen1.jpg'),
+        descripcion:
+          'De las mejores playas, con las olas más largas del norte. ¡Uno de los lugares donde no ir a la playa es ilegal! Hasta nos hospedamos en uno de los mejores hoteles y comimos riquísimo. El sonido del mar apenas deja dormir, pero vale la pena.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Sol hasta la noche',
+        url: malabrigo('imagen2.jpg'),
+        descripcion:
+          '¡Que el sol no falte! Podemos pasar horas soleándonos, y la playa y el agua están tan frescas que te quedas ahí hasta la noche. Eso sí, el bloqueador es opcional… hasta que arde la piel.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Ambiente surfista',
+        url: malabrigo('imagen3.jpg'),
+        descripcion:
+          '¡Investigando hasta lo más profundo! No es tan grande, pero está tan bien ambientado para los surfistas que siempre va a haber hasta un hotel dedicado únicamente a ellos. Probando la comida típica del país y su rica Inca Kola. Aquí hasta el que no surfea se siente parte del ambiente.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Piscina y descanso',
+        url: malabrigo('imagen4.jpg'),
+        descripcion:
+          '¡Vacaciones merecidas! Después de largas jornadas laborales atendiendo la casa, toca hospedarse en un buen hotel. ¿Para qué ir a la playa si tienes piscina? Aunque el mar esté a unos pasos, la piscina gana por comodidad.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Piel quemada y buenos recuerdos',
+        url: malabrigo('imagen5.jpg'),
+        descripcion:
+          'Desde muy pequeños fuimos y siempre aprovechamos al máximo, como nos encantan las playas. ¡Y luego, porque estamos con la piel quemada! La foto con el barco varado es obligatoria; el color de la piel, opcional.',
+      },
+    ],
   },
   {
     id: 'tembladera',
