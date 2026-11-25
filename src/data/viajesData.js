@@ -456,14 +456,6 @@ export const destinosViajes = [
     titulo: 'Tembladera',
   },
   {
-    id: 'esep',
-    titulo: 'Esep',
-  },
-  {
-    id: 'otros',
-    titulo: 'Otros recuerdos',
-  },
-  {
     id: 'ruffo',
     titulo: 'Ruffito ❤️',
     fecha: 'Más de 7 años juntos',
