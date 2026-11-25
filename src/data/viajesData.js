@@ -23,6 +23,8 @@ const cajamarca = (fileName) => viajeAsset(`cajamarca/${fileName}`);
 const pacasmayo = (fileName) => viajeAsset(`pacasmayo/${fileName}`);
 const puntasal = (fileName) => viajeAsset(`puntasal/${fileName}`);
 const malabrigo = (fileName) => viajeAsset(`malabrigo/${fileName}`);
+const huaraz = (fileName) => viajeAsset(`huaraz/${fileName}`);
+const chiclayo = (fileName) => viajeAsset(`chiclayo/${fileName}`);
 
 export const destinosViajes = [
   {
@@ -299,6 +301,46 @@ export const destinosViajes = [
   {
     id: 'chiclayo',
     titulo: 'Chiclayo',
+    fecha: 'Pimentel, sazón y compras',
+    lugar: 'Chiclayo y Lambayeque',
+    portada: chiclayo('portada.png'),
+    fotos: [
+      {
+        tipo: 'foto',
+        titulo: '¿Y si nos mudamos a Chiclayo?',
+        url: chiclayo('imagen1.jpg'),
+        descripcion:
+          'Chiclayo y su balneario de Pimentel están en otro nivel, tanto que ahora le compite directo a Trujillo. Súper moderna, llena de vida y con mil planes y actividades por hacer. Antes decíamos que Trujillo era insuperable, pero Chiclayo nos fue conquistando de a pocos… Mamá, ¿y si vamos buscando departamento allá?',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Parada obligatoria: El Cántaro',
+        url: chiclayo('imagen2.jpg'),
+        descripcion:
+          'Ya tenemos nuestro templo sagrado de la comida: ¡El Cántaro en Lambayeque! Uno de los pocos lugares donde mi papá de verdad come con gusto y no deja ni una migaja en el plato. Entre él y yo pidiendo los mejores platos no hay pierde: seco de cabrito, arroz con pato y esa sazón norteña insuperable.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'San Roque, centros comerciales y café',
+        url: chiclayo('imagen3.jpg'),
+        descripcion:
+          'Ir a Chiclayo y no salir con bolsas es misión imposible: entre el paso obligado por H&M en el mall, las cajas de king kong en San Roque y las paradas en buenas cafeterías, siempre salimos con algo en la mano. Una ciudad cómoda, moderna y donde está claro que ninguno de nosotros se aburriría.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Avestruces y piscinas familiares',
+        url: chiclayo('imagen4.jpg'),
+        descripcion:
+          '¡En los alrededores hay diversión para todos los gustos! Desde visitar granjas campestres con avestruces y animales exóticos hasta pasar la tarde en los mejores clubes campestres con piscinas y toboganes. De esas vacaciones familiares relajadas donde solo toca reírse y disfrutar del calor norteño.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'El segundo hogar en la mira',
+        url: chiclayo('imagen5.jpg'),
+        descripcion:
+          'Sinceramente es una de las ciudades que más ganas tengo de seguir explorando a fondo. Aunque no siempre nos quedamos muchos días, tiene una energía tremenda, la gente es súper acogedora y siempre hay movimiento. Considerémoslo seriamente como nuestro plan de retiro o segunda casa… ¡total, el buen clima ya lo tiene!',
+      },
+    ],
   },
   {
     id: 'chimbote',
@@ -307,6 +349,46 @@ export const destinosViajes = [
   {
     id: 'huaraz',
     titulo: 'Huaraz',
+    fecha: 'Nieve, altura y misterio',
+    lugar: 'Callejón de Huaylas, Áncash',
+    portada: huaraz('portada.jpg'),
+    fotos: [
+      {
+        tipo: 'foto',
+        titulo: '¡Tocando la nieve por primera vez!',
+        url: huaraz('imagen1.jpg'),
+        descripcion:
+          '¡Huaraz y sus historias únicas! Entre reservas naturales imponentes y tours de varias horas en combi que te dejaban mareada, cada curva valía totalmente la pena. Menudas fotos increíbles salieron… ¡el único lugar de todo el Perú donde llegamos a ver y tocar nieve de verdad!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Cultura andina y cuentas pendientes',
+        url: huaraz('imagen2.jpg'),
+        descripcion:
+          'Una cultura e infraestructura tan típica y hermosa de nuestra sierra, con paisajes que te dejan sin aliento (literalmente por la altura, jaja). Todavía nos quedaron muchos rincones por recorrer: faltan las cuevas nevadas y las cumbres más altas donde Naty y yo prometemos que sí nos atrevemos a subir contigo.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'El misterio de lo eterno',
+        url: huaraz('imagen3.jpg'),
+        descripcion:
+          'Construcciones y ruinas tan antiguas y cargadas de historia que entrar ahí es una experiencia de misterio puro. Impresionante cómo pasaron tantos siglos y se mantiene en pie… ¡ni los terremotos ni el aluvión de hace años pudieron con esto! Un lugar que impone respeto nada más pisarlo.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Pachamanca, carnero y arroz serrano',
+        url: huaraz('imagen4.jpg'),
+        descripcion:
+          '¡Aquí no nos privamos de nada! Comimos helados artesanales, pachamanca de verdad y carnero al palo en distintos puestos. Hay que admitir la verdad: el arroz en la sierra nunca queda igual por la presión del aire, ¡pero la sazón tradicional y esa forma de cocinar a leña y piedra es tan única y antigua que compensa todo!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Frazadas con estática y vecinos fiesteros',
+        url: huaraz('imagen5.jpg'),
+        descripcion:
+          '¿Te acuerdas de la plazuela donde nos hospedamos? ¡Imposible pegar el ojo con los lugareños celebrando y tomando con banda hasta el amanecer! Y para rematar, las frazadas de lana de oveja 100% pura: eran tan pesadas y abrigadoras que nos pasaban corriente estática cada vez que nos movíamos. ¡Pobre Naty, durmiendo con sus tapones de oído y tapada hasta la frente!',
+      },
+    ],
   },
   {
     id: 'lima',
