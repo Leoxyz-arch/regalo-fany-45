@@ -43,7 +43,7 @@ export default function PodioTop3({ top3, destinos, onRemove, onOpen }) {
             transition={{ type: 'spring', stiffness: 260, damping: 28 }}
             className={`relative overflow-hidden rounded-2xl border bg-stone-950/55 backdrop-blur-sm ${altura} ${borde} ${brillo}`}
           >
-            {destino && (
+            {destino?.portada && (
               <>
                 <img
                   src={destino.portada}
@@ -82,9 +82,11 @@ export default function PodioTop3({ top3, destinos, onRemove, onOpen }) {
                   >
                     {destino.titulo}
                   </span>
-                  <span className="mt-0.5 hidden text-[9px] leading-tight text-amber-100/45 sm:block">
-                    {destino.fecha}
-                  </span>
+                  {destino.fecha && (
+                    <span className="mt-0.5 hidden text-[9px] leading-tight text-amber-100/45 sm:block">
+                      {destino.fecha}
+                    </span>
+                  )}
                 </button>
               ) : (
                 <span className="mt-1 text-[9px] text-stone-400/80 sm:text-[10px]">

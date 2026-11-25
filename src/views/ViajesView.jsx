@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowLeft,
@@ -18,64 +18,28 @@ import RecompensaFragmento from '../components/viajes/RecompensaFragmento';
 
 const MEDALLAS = ['🥇', '🥈', '🥉'];
 
-// Las portadas muy panorámicas y de baja resolución se ven borrosas si se
-// recortan para llenar la tarjeta. En ese caso se muestran completas y nítidas
-// sobre un fondo difuminado de la misma foto.
+// Las tarjetas con portada la recortan para llenar todo el cuadro. Las que
+// todavía no tienen imagen muestran una portada de espera con su título.
 function PortadaTarjeta({ portada, titulo }) {
-  const imgRef = useRef(null);
-  const [modo, setModo] = useState('cover');
-
-  const decidirEncuadre = useCallback(() => {
-    const img = imgRef.current;
-    const tarjeta = img?.closest('[data-tarjeta-viaje]');
-    if (!img || !tarjeta || !img.naturalWidth || !img.naturalHeight) return;
-
-    const { width, height } = tarjeta.getBoundingClientRect();
-    const escala = Math.max(
-      width / img.naturalWidth,
-      height / img.naturalHeight,
+  if (!portada) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(251,191,36,0.16),transparent_55%),linear-gradient(145deg,#292524,#1c1917_60%,#0c0a09)]">
+        <Compass
+          className="h-14 w-14 text-amber-200/15 sm:h-16 sm:w-16"
+          strokeWidth={1}
+          aria-hidden="true"
+        />
+      </div>
     );
-
-    // Si habría que ampliarla más de 1.35x para llenar la tarjeta, no la
-    // estiramos: la mostramos completa.
-    setModo(escala > 1.35 ? 'contain' : 'cover');
-  }, []);
-
-  useEffect(() => {
-    const tarjeta = imgRef.current?.closest('[data-tarjeta-viaje]');
-    if (!tarjeta || typeof ResizeObserver === 'undefined') return;
-
-    const observer = new ResizeObserver(decidirEncuadre);
-    observer.observe(tarjeta);
-    decidirEncuadre();
-
-    return () => observer.disconnect();
-  }, [decidirEncuadre]);
+  }
 
   return (
-    <>
-      {modo === 'contain' && (
-        <img
-          src={portada}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full scale-110 object-cover opacity-55 blur-2xl"
-          draggable={false}
-        />
-      )}
-      <img
-        ref={imgRef}
-        src={portada}
-        alt={`Portada de ${titulo}`}
-        onLoad={decidirEncuadre}
-        className={`absolute inset-0 h-full w-full ${
-          modo === 'contain'
-            ? 'object-contain p-2'
-            : 'object-cover transition-transform duration-700 ease-out group-hover:scale-105'
-        }`}
-        draggable={false}
-      />
-    </>
+    <img
+      src={portada}
+      alt={`Portada de ${titulo}`}
+      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      draggable={false}
+    />
   );
 }
 
@@ -311,24 +275,34 @@ export default function ViajesView({
               {destinosViajes.map((destino, index) => {
                 const puesto = top3.indexOf(destino.id);
                 const enPodio = puesto >= 0;
+                const tieneFotos = (destino.fotos?.length ?? 0) > 0;
 
                 return (
                   <motion.button
                     key={destino.id}
                     type="button"
-                    onClick={() => abrirDestino(destino)}
+                    onClick={() => {
+                      if (tieneFotos) abrirDestino(destino);
+                    }}
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.05 + index * 0.045, duration: 0.4 }}
-                    whileHover={{ y: -4 }}
-                    whileTap={{ scale: 0.985 }}
-                    className={`group relative aspect-[4/5] w-full cursor-pointer overflow-hidden rounded-2xl border text-left shadow-[0_16px_35px_rgba(0,0,0,0.35)] transition-colors ${
+                    whileHover={tieneFotos ? { y: -4 } : undefined}
+                    whileTap={tieneFotos ? { scale: 0.985 } : undefined}
+                    className={`group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border text-left shadow-[0_16px_35px_rgba(0,0,0,0.35)] transition-colors ${
+                      tieneFotos ? 'cursor-pointer' : 'cursor-default'
+                    } ${
                       enPodio
                         ? 'border-amber-300/70 shadow-[0_0_30px_rgba(251,191,36,0.16)]'
-                        : 'border-white/10 hover:border-amber-200/45'
+                        : tieneFotos
+                          ? 'border-white/10 hover:border-amber-200/45'
+                          : 'border-white/10'
                     }`}
-                    aria-label={`Abrir el libro de ${destino.titulo}`}
-                    data-tarjeta-viaje
+                    aria-label={
+                      tieneFotos
+                        ? `Abrir el libro de ${destino.titulo}`
+                        : `${destino.titulo}, recuerdo por completar`
+                    }
                   >
                     <PortadaTarjeta
                       portada={destino.portada}
@@ -357,15 +331,23 @@ export default function ViajesView({
                     </div>
 
                     <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
-                      <p className="text-[8px] font-bold uppercase tracking-[0.16em] text-amber-200/70 sm:text-[9px]">
-                        {destino.fecha}
-                      </p>
+                      {destino.fecha && (
+                        <p className="text-[8px] font-bold uppercase tracking-[0.16em] text-amber-200/70 sm:text-[9px]">
+                          {destino.fecha}
+                        </p>
+                      )}
                       <h3 className="mt-0.5 font-serif text-base font-bold leading-tight text-amber-50 sm:text-xl">
                         {destino.titulo}
                       </h3>
-                      <span className="mt-1.5 inline-flex items-center gap-1 text-[9px] font-semibold text-amber-200/65 transition-colors group-hover:text-amber-200 sm:text-[10px]">
+                      <span
+                        className={`mt-1.5 inline-flex items-center gap-1 text-[9px] font-semibold transition-colors sm:text-[10px] ${
+                          tieneFotos
+                            ? 'text-amber-200/65 group-hover:text-amber-200'
+                            : 'text-amber-200/35'
+                        }`}
+                      >
                         <BookOpen className="h-3 w-3" />
-                        Abrir recuerdo
+                        {tieneFotos ? 'Abrir recuerdo' : 'Por completar'}
                       </span>
                     </div>
                   </motion.button>

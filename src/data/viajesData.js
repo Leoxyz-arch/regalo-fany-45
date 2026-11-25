@@ -20,15 +20,6 @@ const trujillo = (fileName) => viajeAsset(`trujillo/${fileName}`);
 const ica = (fileName) => viajeAsset(`ica/${fileName}`);
 const piura = (fileName) => viajeAsset(`piura/${fileName}`);
 const cajamarca = (fileName) => viajeAsset(`cajamarca/${fileName}`);
-const chiclayo = (fileName) => viajeAsset(`chiclayo/${fileName}`);
-const chimbote = (fileName) => viajeAsset(`chimbote/${fileName}`);
-const esep = (fileName) => viajeAsset(`esep/${fileName}`);
-const huaraz = (fileName) => viajeAsset(`huaraz/${fileName}`);
-const lima = (fileName) => viajeAsset(`lima/${fileName}`);
-const malabrigo = (fileName) => viajeAsset(`malabrigo/${fileName}`);
-const otros = (fileName) => viajeAsset(`otros/${fileName}`);
-const puntasal = (fileName) => viajeAsset(`puntasal/${fileName}`);
-const tembladera = (fileName) => viajeAsset(`tembladera/${fileName}`);
 
 export const destinosViajes = [
   {
@@ -298,363 +289,38 @@ export const destinosViajes = [
   {
     id: 'chiclayo',
     titulo: 'Chiclayo',
-    fecha: 'Sabor y paseo norteño',
-    lugar: 'Chiclayo, Lambayeque',
-    portada: chiclayo('IMG_20221012_135931.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'Paseo familiar',
-        url: chiclayo('IMG_20221012_135931.jpg'),
-        descripcion:
-          'Un paseo por Chiclayo con el sol de la costa y la mejor compañía. Viaje corto, pero con foto familiar para el recuerdo.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Cocina y sabores',
-        url: chiclayo('Captura de pantalla 2026-11-24 223350.jpg'),
-        descripcion:
-          'Una experiencia de cocina con delantales, risas y sabores. Lo mejor de Chiclayo también se disfruta cocinando (y probando).',
-      },
-    ],
   },
   {
     id: 'chimbote',
     titulo: 'Chimbote',
-    fecha: 'Playa, música y familia',
-    lugar: 'Nuevo Chimbote, Áncash',
-    portada: chimbote('portada.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'Cena en familia',
-        url: chimbote('Imagen3.jpg'),
-        descripcion:
-          'Una cena en familia, de esas donde la mesa se llena de conversación y risas.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Castillos de arena',
-        url: chimbote('IMG_20230115_124143.jpg'),
-        descripcion:
-          'Día de playa y castillos de arena. Trabajo en equipo, palas en mano y el mar de fondo.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Micrófono abierto',
-        url: chimbote('IMG_20230218_105457.jpg'),
-        descripcion:
-          'Una noche de música y karaoke: sin pena, con micrófono en mano y el público puesto.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'La banda en vivo',
-        url: chimbote('IMG_20231207_112022.jpg'),
-        descripcion:
-          'Música en vivo y una banda que le puso ritmo al recuerdo.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Bien puestos',
-        url: chimbote('IMG_20231209_195222.jpg'),
-        descripcion:
-          'Todos bien puestos para la foto: la familia completa, mirando a cámara.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'El ceviche',
-        url: chimbote('IMG_20240120_142748.jpg'),
-        descripcion:
-          'Y qué sería de la costa sin su ceviche. Aquí, bien servido y con harto limón.',
-      },
-    ],
   },
   {
     id: 'huaraz',
     titulo: 'Huaraz',
-    fecha: 'Lagunas y nevados',
-    lugar: 'Huaraz, Áncash',
-    portada: huaraz('portada.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'La laguna',
-        url: huaraz('IMG_20221010_142148.jpg'),
-        descripcion:
-          'La laguna y sus colores: agua turquesa, montañas alrededor y una foto que no necesita filtro.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'El nevado',
-        url: huaraz('IMG_20240722_120838.jpg'),
-        descripcion:
-          'El nevado imponente, blanco y enorme, recordándonos lo pequeños que somos.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Abrazados en la altura',
-        url: huaraz('IMG_20240723_111519.jpg'),
-        descripcion:
-          'Un abrazo con el lago de fondo y el frío de la altura. Abrigo, cariño y paisaje de sobra.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'La caminata',
-        url: huaraz('IMG_20240723_154405.jpg'),
-        descripcion:
-          'La caminata valió la pena: paisajes enormes, aire puro y piernas cansadas (pero felices).',
-      },
-    ],
   },
   {
     id: 'lima',
     titulo: 'Lima',
-    fecha: 'Murales y luces',
-    lugar: 'Lima, la capital',
-    portada: lima('portada.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'El mural de Chabuca',
-        url: lima('imagen1.jpg'),
-        descripcion:
-          'Un mural enorme de Chabuca Granda y una foto familiar a su lado. Lima también canta.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Barranco',
-        url: lima('imagen.webp'),
-        descripcion:
-          'Callecitas de Barranco, buganvilias y una postal que parece de otro tiempo.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'La atracción',
-        url: lima('IMG_20220415_133633.jpg'),
-        descripcion:
-          'La atracción del parque: arneses, mascarillas y caras de emoción antes de que empiece.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Luces y agua',
-        url: lima('imagen1.webp'),
-        descripcion:
-          'De noche, el parque se ilumina y el agua se vuelve espejo. Foto obligada con el arbolito de fondo.',
-      },
-    ],
   },
   {
     id: 'malabrigo',
     titulo: 'Malabrigo',
-    fecha: 'El puerto y su playa',
-    lugar: 'Puerto Malabrigo, La Libertad',
-    portada: malabrigo('20250301_092442.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'La playa',
-        url: malabrigo('20250228_150357.jpg'),
-        descripcion:
-          'La costa de Malabrigo, con su mar y ese cielo que parece pintado.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Bajo la sombrilla',
-        url: malabrigo('20250228_170749.jpg'),
-        descripcion:
-          'Sombrilla, arena y familia. El plan perfecto para no hacer nada.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'La piscina',
-        url: malabrigo('20250228_180130.jpg'),
-        descripcion:
-          'Un chapuzón y piernas al sol: las vacaciones también se disfrutan sin prisa.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Noche de luces',
-        url: malabrigo('Captura de pantalla 2026-11-24 122850.jpg'),
-        descripcion:
-          'Malabrigo de noche: luces, iglesia y una foto que mezcla playa y ciudad.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Caminata por la arena',
-        url: malabrigo('IMG_20240130_165146.jpg'),
-        descripcion:
-          'Caminata por la arena, con el mar a un lado y las dunas al otro.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'El barco de Malabrigo',
-        url: malabrigo('IMG_20240130_183842.jpg'),
-        descripcion:
-          'Un barco varado en la arena, listo para la foto. Malabrigo tiene magia hasta en sus barcos.',
-      },
-    ],
   },
   {
     id: 'puntasal',
     titulo: 'Punta Sal',
-    fecha: 'Sol, playa y descanso',
-    lugar: 'Punta Sal, Tumbes',
-    portada: puntasal('portada.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'El mar y la piscina',
-        url: puntasal('Captura de pantalla 2026-11-24 122222.jpg'),
-        descripcion:
-          'Punta Sal: mar, piscina y sol. Un collage de los dos moods del viaje.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'El show',
-        url: puntasal('IMG_20231031_202602.jpg'),
-        descripcion:
-          'El show nocturno: luces, escenario y la familia disfrutando desde primera fila.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Entre bambalinas',
-        url: puntasal('IMG_20231031_221149.jpg'),
-        descripcion:
-          'Una foto del show desde otro ángulo, con el escenario encendido.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'El cangrejo',
-        url: puntasal('IMG_20231101_190445.jpg'),
-        descripcion:
-          'El cangrejo, servido y listo. En Punta Sal la comida también es protagonista.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Después del sol',
-        url: puntasal('IMG_20231101_223052.jpg'),
-        descripcion:
-          'Después del sol, el cansancio: siesta profunda y a recuperar energía.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Cuatrimoto en la playa',
-        url: puntasal('IMG_20231102_105442.jpg'),
-        descripcion:
-          'Cuatrimoto en la arena: adrenalina, viento y una playa entera para nosotros.',
-      },
-    ],
   },
   {
     id: 'tembladera',
     titulo: 'Tembladera',
-    fecha: 'Raíces y paisajes',
-    lugar: 'Tembladera, Cajamarca',
-    portada: tembladera('IMG_20240525_095238.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'En casa',
-        url: tembladera('imagen1.jpg'),
-        descripcion:
-          'En casa, jugando y posando. Los recuerdos más simples también merecen su página.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'La estatua del águila',
-        url: tembladera('IMG_20240525_095238.jpg'),
-        descripcion:
-          'Una foto sobre la estatua del águila, con el lago de fondo. Tembladera también tiene sus lugares únicos.',
-      },
-    ],
   },
   {
     id: 'esep',
     titulo: 'Esep',
-    fecha: 'Casona, malecón y playa',
-    lugar: 'Un paseo por la costa',
-    portada: esep('portada.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'La casona azul',
-        url: esep('20250426_134339.jpg'),
-        descripcion:
-          'La casona azul y su balcón: una postal de pueblo con historia.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Cristo y malecón',
-        url: esep('Captura de pantalla 2026-11-24 140748.jpg'),
-        descripcion:
-          'Un paseo por el malecón, con el Cristo abrazando la ciudad y el mar de fondo.',
-      },
-    ],
   },
   {
     id: 'otros',
     titulo: 'Otros recuerdos',
-    fecha: 'Momentos en familia',
-    lugar: 'Donde sea, juntos',
-    portada: otros('20241124_152728.jpg'),
-    fotos: [
-      {
-        tipo: 'foto',
-        titulo: 'Una boda',
-        url: otros('FB_IMG_1692968619627.jpg'),
-        descripcion:
-          'Una boda, ropa elegante y una foto de pareja. Los eventos también se guardan.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Los primeros años',
-        url: otros('FB_IMG_1716602717355.jpg'),
-        descripcion:
-          'Los primeros años: un bebé, un papá y una siesta que no llegó a ser siesta.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'El puente',
-        url: otros('FB_IMG_1737760240112.jpg'),
-        descripcion:
-          'El puente amarillo y una foto juntos. Cualquier paseo es mejor en pareja.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Comida y risas',
-        url: otros('FB_IMG_1737760243764.jpg'),
-        descripcion:
-          'Comida, risas y una mesa compartida. Lo de siempre, pero siempre bien.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'El pasadizo',
-        url: otros('FB_IMG_1737760492568.jpg'),
-        descripcion:
-          'Corriendo por el pasadizo de madera: energía de sobra y una foto en movimiento.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Bicicleta',
-        url: otros('FB_IMG_1740200560090.jpg'),
-        descripcion:
-          'Aprender a andar en bicicleta: papá detrás, valentía adelante.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'Con la chompa de mamá',
-        url: otros('IMG_15421753211819.jpg'),
-        descripcion:
-          'Con la chompa de mamá y cara de no querer la foto. Igual quedó hermosa.',
-      },
-      {
-        tipo: 'foto',
-        titulo: 'La niña y su osito',
-        url: otros('Screenshot_20250413_123229_Facebook.jpg'),
-        descripcion:
-          'Una tarde al aire libre, un osito y una niña que ya posa como grande.',
-      },
-    ],
   },
   {
     id: 'ruffo',
