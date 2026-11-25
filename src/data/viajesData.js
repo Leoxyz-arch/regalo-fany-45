@@ -284,6 +284,13 @@ export const destinosViajes = [
         descripcion:
           'Un lugar donde siempre fortalecemos nuestras raíces serranas, conectando con la naturaleza y hasta con el oxígeno más fresco.',
       },
+      {
+        tipo: 'foto',
+        titulo: 'La familia en el lago',
+        url: cajamarca('imagen7.jpg'),
+        descripcion:
+          'Una foto en familia de hace años, paseando en balsa y con la bandera del Perú de fondo. El tiempo pasa, pero el recuerdo sigue igual de vivo.',
+      },
     ],
   },
   {
