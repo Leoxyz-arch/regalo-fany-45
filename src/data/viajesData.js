@@ -317,7 +317,7 @@ export const destinosViajes = [
     titulo: 'Pacasmayo',
     fecha: 'Calma y playa en familia',
     lugar: 'Pacasmayo, La Libertad',
-    portada: pacasmayo('portada.png'),
+    portada: pacasmayo('portada.webp'),
     fotos: [
       {
         tipo: 'foto',
