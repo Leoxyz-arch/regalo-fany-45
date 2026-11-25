@@ -1,148 +1,339 @@
 // Álbum de la Puerta 1: Viajes
 // ---------------------------------
 // Cambia los textos, fechas, portadas y fotos por los recuerdos reales.
-// Las imágenes actuales son marcadores de posición temporales que están en
-// public/images/viajes/ y se cargan con import.meta.env.BASE_URL.
+// Cada viaje vive en su carpeta dentro de public/images/viajes/ y se carga
+// con import.meta.env.BASE_URL.
 // Si prefieres usar una URL externa, reemplaza viajeAsset('...') por la URL.
+//
+// Cada elemento de `fotos` puede ser una foto o un video:
+//   { tipo: 'foto',  url: '...', descripcion: '...' }
+//   { tipo: 'video', url: '...', poster: '...', descripcion: '...' }
+// Si no pones `tipo`, se detecta por la extensión del archivo.
+// El marco del libro se adapta solo a la orientación de cada archivo
+// (vertical u horizontal), así que puedes mezclarlos sin problema.
 
 const viajeAsset = (fileName) => `${import.meta.env.BASE_URL}images/viajes/${fileName}`;
 
+const selva = (fileName) => viajeAsset(`selva/${fileName}`);
+const ruffo = (fileName) => viajeAsset(`ruffo/${fileName}`);
+const trujillo = (fileName) => viajeAsset(`trujillo/${fileName}`);
+const ica = (fileName) => viajeAsset(`ica/${fileName}`);
+const piura = (fileName) => viajeAsset(`piura/${fileName}`);
+const cajamarca = (fileName) => viajeAsset(`cajamarca/${fileName}`);
+
 export const destinosViajes = [
   {
-    id: 'destino-1',
-    titulo: 'Destino 1',
-    fecha: 'Fecha especial por escribir',
-    portada: viajeAsset('destino-1-portada.svg'),
+    id: 'pozuzo',
+    titulo: 'Pozuzo',
+    fecha: 'Viaje reciente · Selva peruana',
+    lugar: 'Pozuzo, Oxapampa',
+    portada: selva('Portada.jpg'),
     fotos: [
       {
-        url: viajeAsset('destino-1-foto-1.svg'),
+        tipo: 'foto',
+        titulo: 'La llegada a la selva',
+        url: selva('imagen1.jpg'),
         descripcion:
-          'Descripción de la foto 1 del Destino 1. Aquí puedes contar lo que vivimos, lo que sentimos y por qué este momento es especial.',
+          'El viaje a la selva más reciente. Aunque yo no haya estado, vieron paisajes y experiencias únicas.',
       },
       {
-        url: viajeAsset('destino-1-foto-2.svg'),
+        tipo: 'foto',
+        titulo: 'Mamá, la más guapa',
+        url: selva('imagen2.jpg'),
         descripcion:
-          'Descripción de la foto 2 del Destino 1. Cambia este texto por un recuerdo real para que mamá lo reviva al abrir el libro.',
+          'Mi madre mía, posando y guapa como siempre, demostrando que claramente aún está joven.',
       },
       {
-        url: viajeAsset('destino-1-foto-3.svg'),
+        tipo: 'foto',
+        titulo: 'Atrévete a lo extremo',
+        url: selva('imagen3.jpg'),
         descripcion:
-          'Descripción de la foto 3 del Destino 1. Cada foto tiene su propia historia; escribe aquí la que quieras guardar.',
+          'Aunque no te hayas atrevido a las experiencias extremas, algún día vivirás de verdad: las experiencias son únicas y ves que a los demás no les pasa nada… ¡atrévete!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'La boda del año',
+        url: selva('imagen4.jpg'),
+        descripcion:
+          '¡Una boda colada, de ñañitos y ñañas! ¡Qué moderno! Desfile, limusina… por poco y te haces de familia de ellos. Espero que no haya sido solo por la herencia.',
+      },
+      {
+        tipo: 'foto',
+        titulo: '¡A comer!',
+        url: selva('imagen5.jpg'),
+        descripcion:
+          '¡La comida! La comida exótica y de todos los sitios: ¡su juane! Su comida tradicional, nuevos sabores de la misma selva. No se compara la comida de la costa con la de la selva.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Papá en su salsa',
+        url: selva('imagen6.jpg'),
+        descripcion:
+          'Esta foto… ¿? Mi papá haciendo de las suyas. Nada más que decir, jaja.',
+      },
+      {
+        tipo: 'video',
+        titulo: 'El resumen del viaje',
+        url: selva('video1.mp4'),
+        poster: selva('Portada.jpg'),
+        descripcion:
+          'En fin, un viaje con nuevas experiencias. Hasta te picó un insecto, pero aun así no paraste de disfrutar el viaje y las experiencias.',
       },
     ],
   },
   {
-    id: 'destino-2',
-    titulo: 'Destino 2',
-    fecha: 'Fecha especial por escribir',
-    portada: viajeAsset('destino-2-portada.svg'),
+    id: 'ruffo',
+    titulo: 'Ruffito ❤️',
+    fecha: 'Más de 7 años juntos',
+    lugar: 'Un miembro más de la familia',
+    portada: ruffo('Portada.jpg'),
     fotos: [
       {
-        url: viajeAsset('destino-2-foto-1.svg'),
+        tipo: 'foto',
+        titulo: 'Ruffito, parte de la familia',
+        url: ruffo('imagen1.jpg'),
         descripcion:
-          'Descripción de la foto 1 del Destino 2. Reemplaza este texto por el recuerdo que quieres revivir en esta página.',
+          'El perro que nos acompañó más de 7 años. Ruffito, como parte de la familia.',
       },
       {
-        url: viajeAsset('destino-2-foto-2.svg'),
+        tipo: 'foto',
+        titulo: 'Navidades, cumples y consuelo',
+        url: ruffo('imagen2.jpg'),
         descripcion:
-          'Descripción de la foto 2 del Destino 2. Una pequeña historia para acompañar esta imagen del viaje.',
+          'Pasamos miles de eventos con él: muchas navidades, cumpleaños, peleas… y él fue el consuelo. ¡Un mejor amigo de la familia!',
       },
       {
-        url: viajeAsset('destino-2-foto-3.svg'),
+        tipo: 'foto',
+        titulo: 'El mejor perro juguetón',
+        url: ruffo('imagen3.jpg'),
         descripcion:
-          'Descripción de la foto 3 del Destino 2. Escribe aquí la anécdota o el sentimiento que hace único este momento.',
+          'Siempre le hacíamos de todo: lo vestíamos, lo ayudábamos, lo curábamos… y él siempre daba a cambio su cariño y acompañamiento. ¡El mejor perro juguetón y de todo!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Siempre una risita',
+        url: ruffo('imagen4.jpg'),
+        descripcion:
+          'Nos acompañó en los momentos de soledad y en los felices: siempre nos sacaba una risita y siempre era muy agradecido con nosotros.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'El hámster (sí, ese)',
+        url: ruffo('imagen5.jpg'),
+        descripcion:
+          'Pero no olvidemos al hámster que tuvimos: nuestra primera mascota de familia, ¡que comía a sus hijos! Aprendimos que, aunque sea pequeño, ya era una responsabilidad enorme. Menos mal fue cuidado por mejores personas; ¡si no, con nosotros no vivía! Jaja.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Un miembro más de la familia',
+        url: ruffo('imagen7.jpg'),
+        descripcion:
+          'Ruffo, aunque no haya sido nuestro, era un miembro más de la familia. No fue un viaje en sí, pero sí fue un viaje vivir con él hasta la fecha. Aunque no estemos con él, siempre nos regaló lo mejor.',
       },
     ],
   },
   {
-    id: 'destino-3',
-    titulo: 'Destino 3',
-    fecha: 'Fecha especial por escribir',
-    portada: viajeAsset('destino-3-portada.svg'),
+    id: 'trujillo',
+    titulo: 'Trujillo',
+    fecha: 'Donde empezó la historia',
+    lugar: 'La ciudad que nos vio crecer',
+    portada: trujillo('portada.jpg'),
     fotos: [
       {
-        url: viajeAsset('destino-3-foto-1.svg'),
+        tipo: 'foto',
+        titulo: 'Donde empezó todo',
+        url: trujillo('imagen1.jpg'),
         descripcion:
-          'Descripción de la foto 1 del Destino 3. Este es un espacio de prueba listo para tu recuerdo real.',
+          'El lugar donde iniciamos la historia, el lugar donde empezó todo. Desde que tenemos conocimiento, hicimos miles de recuerdos.',
       },
       {
-        url: viajeAsset('destino-3-foto-2.svg'),
+        tipo: 'foto',
+        titulo: 'Siempre volvemos',
+        url: trujillo('imagen2.jpg'),
         descripcion:
-          'Descripción de la foto 2 del Destino 3. Cuenta aquí lo que pasó justo antes o después de esta foto.',
+          'Hasta la fecha regresamos aquí por mis estudios, y agradezco mucho eso: no dejarme solo y siempre apoyarme. Exprimimos todo Trujillo juntos en miles de lugares.',
       },
       {
-        url: viajeAsset('destino-3-foto-3.svg'),
+        tipo: 'foto',
+        titulo: 'Rutinas, logros y de todo',
+        url: trujillo('imagen3.jpg'),
         descripcion:
-          'Descripción de la foto 3 del Destino 3. Un detalle, una risa o una frase que quieras recordar para siempre.',
+          'Hicimos rutinas, eventos, logros personales, el inicio de muchas cosas: medallas, juegos, gym, mercado… hacíamos de todo. Aunque la misma ciudad se haya llenado de criminalidad, es donde superaste hasta el gobierno de Alberto Fujimori.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Llenos de abejas',
+        url: trujillo('imagen4.jpg'),
+        descripcion:
+          'Hasta los alrededores de Trujillo: experiencias únicas, lugares y experiencias que jamás imaginamos hacer. ¡Todo el cuerpo lleno de abejas!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'El mismísimo Ricolaasss',
+        url: trujillo('imagen5.jpg'),
+        descripcion:
+          'Hasta conocimos al mismísimo Ricolaasss. ¡Qué rico estás! Mira cómo te derretías al lado de él; quizás en otra vida estarías con él y saldrían tus hijos gringos… jaja.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'La doña del mercado',
+        url: trujillo('imagen6.jpg'),
+        descripcion:
+          'La mitiquísima doña del mercado que gritaba «¡Guapo!». El mejor lugar para desayunar en el mercado central: simple, sencillo y con buen trato.',
+      },
+      {
+        tipo: 'video',
+        titulo: 'El resumen de una vida',
+        url: trujillo('video1.mp4'),
+        poster: trujillo('portada.jpg'),
+        descripcion:
+          'Hicimos de todo: miles de navidades, cumpleaños, primeras cosas de varias… y agradezco mucho que estén en este viaje solo por mí, adaptado a una vida diferente, una vida donde ya conocen el terreno. Muchas gracias, les debo mucho. ¡A seguir formando recuerdos en casa!',
       },
     ],
   },
   {
-    id: 'destino-4',
-    titulo: 'Destino 4',
-    fecha: 'Fecha especial por escribir',
-    portada: viajeAsset('destino-4-portada.svg'),
+    id: 'ica',
+    titulo: 'Ica',
+    fecha: 'Sol, dunas y leyendas',
+    lugar: 'Huacachina y sus alrededores',
+    portada: ica('portada.jpg'),
     fotos: [
       {
-        url: viajeAsset('destino-4-foto-1.svg'),
+        tipo: 'foto',
+        titulo: 'Historia y leyendas',
+        url: ica('imagen1.jpg'),
         descripcion:
-          'Descripción de la foto 1 del Destino 4. Sustituye este texto por la historia que acompaña a esta imagen.',
+          'Fuimos muy pocas veces, pero hicimos de todo: conocimos historia y leyendas. Uno de los lugares más soleados a los que fuimos, ¡y con tormenta de arena incluida!',
       },
       {
-        url: viajeAsset('destino-4-foto-2.svg'),
+        tipo: 'foto',
+        titulo: 'Vino hecho en casa',
+        url: ica('imagen2.jpg'),
         descripcion:
-          'Descripción de la foto 2 del Destino 4. Un recuerdo pequeño también puede merecer una página entera.',
+          'La pasamos bien: tomamos vino hecho en casa, fuimos a lugares únicos del Perú, actividades caras pero divertidas. La verdad, ¡sí queda muy lejos de donde vivimos!',
       },
       {
-        url: viajeAsset('destino-4-foto-3.svg'),
+        tipo: 'foto',
+        titulo: 'Las dunas',
+        url: ica('imagen3.jpg'),
         descripcion:
-          'Descripción de la foto 3 del Destino 4. Escribe el momento exacto que quieres que ella vuelva a sentir.',
+          'Lo mejor fueron las dunas: hasta mi tía Nena, a su edad, vivió al máximo. ¿Y tú, que tienes miedo…? A la próxima te toca navegar esas arenas y bañarte en ellas. Aquí una foto de nosotros en medio de la arena y el sol, jaja.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Comida de todo',
+        url: ica('imagen4.jpg'),
+        descripcion:
+          'A los alrededores conocimos muchos lugares donde comimos de todo: desde lo más rico hasta lo más raro. ¿Te acuerdas de esa negra y su sazón? Jaja. Aunque más me gustó la comida del hotel.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'El camello',
+        url: ica('imagen5.jpg'),
+        descripcion:
+          'De lejitos nomás: un camello que, para subirse, costaba unos 50 soles. Por lo menos lo viste, ¡una criatura que solo se ve en el lejano oeste!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'El parque de las brujas',
+        url: ica('imagen6.jpg'),
+        descripcion:
+          'El parque de las brujas, lugares históricos de los amigos del chato: lugares inolvidables y rústicos. La pasamos genial. En un futuro espero que vayamos y la pasemos sin miedo por tu parte, jaja.',
       },
     ],
   },
   {
-    id: 'destino-5',
-    titulo: 'Destino 5',
-    fecha: 'Fecha especial por escribir',
-    portada: viajeAsset('destino-5-portada.svg'),
+    id: 'piura',
+    titulo: 'Piura',
+    fecha: 'Norte, calor y comida',
+    lugar: 'Piura y sus alrededores',
+    portada: piura('portada.jpg'),
     fotos: [
       {
-        url: viajeAsset('destino-5-foto-1.svg'),
+        tipo: 'foto',
+        titulo: 'Un norte distinto',
+        url: piura('imagen1.jpg'),
         descripcion:
-          'Descripción de la foto 1 del Destino 5. Cambia este marcador por un recuerdo que te haga sonreír.',
+          'Un lugar al norte donde no fuimos muchas veces. No hicimos gran cosa, pero vimos cosas únicas y construcciones únicas del Perú.',
       },
       {
-        url: viajeAsset('destino-5-foto-2.svg'),
+        tipo: 'foto',
+        titulo: 'La casa del personaje',
+        url: piura('imagen2.jpg'),
         descripcion:
-          'Descripción de la foto 2 del Destino 5. Aquí puedes describir el paisaje, la compañía o lo que sintieron ese día.',
+          'Conocimos la casa de un personaje importante del Perú. Mantenía su pinta de antigüedad… ¿Crees que todo sea original?',
       },
       {
-        url: viajeAsset('destino-5-foto-3.svg'),
+        tipo: 'foto',
+        titulo: 'De compras',
+        url: piura('imagen3.jpg'),
         descripcion:
-          'Descripción de la foto 3 del Destino 5. Deja escrita la parte de la historia que no debe olvidarse.',
+          '¡Llegamos a comprar cosas! Un centro comercial impresionante y con la mejor infraestructura que vi: hasta hay Zara, tienda de ropa de lujo. Compramos mucha ropa y es muy moderno. Espero explorar más lugares la próxima vez.',
+      },
+      {
+        tipo: 'foto',
+        titulo: '¡Que no falte la comida!',
+        url: piura('imagen4.jpg'),
+        descripcion:
+          '¡Que no falte la comida! Me acuerdo de que hay miles de lugares, pero abundan los cheleros: cada restaurante tenía uno, jaja. Comida típica con su calor rico.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Puentes y sol',
+        url: piura('imagen5.jpg'),
+        descripcion:
+          'Un lugar especial pero muy soleado: sus miles de puentes y lugares que aún no exploramos. Espero volver para seguir investigando cada actividad posible.',
       },
     ],
   },
   {
-    id: 'destino-6',
-    titulo: 'Destino 6',
-    fecha: 'Fecha especial por escribir',
-    portada: viajeAsset('destino-6-portada.svg'),
+    id: 'cajamarca',
+    titulo: 'Cajamarca',
+    fecha: 'Tierra de carnavales',
+    lugar: 'La sierra que llevamos dentro',
+    portada: cajamarca('portada.jpg'),
     fotos: [
       {
-        url: viajeAsset('destino-6-foto-1.svg'),
+        tipo: 'foto',
+        titulo: 'Sangre serrana',
+        url: cajamarca('imagen1.jpg'),
         descripcion:
-          'Descripción de la foto 1 del Destino 6. Reemplaza este texto por el recuerdo real de este viaje.',
+          'El lugar de los carnavales, el lugar donde fui hecho y por eso tengo sangre serrana. ¡Hasta tenemos el lugar donde siempre comemos! Que no falte el soroche.',
       },
       {
-        url: viajeAsset('destino-6-foto-2.svg'),
+        tipo: 'foto',
+        titulo: 'De noche es mejor',
+        url: cajamarca('imagen2.jpg'),
         descripcion:
-          'Descripción de la foto 2 del Destino 6. Una frase, un lugar o una anécdota para acompañar la imagen.',
+          'De noche es mejor: una ciudad iluminada que, pese a estar en altura, nos fuerza a los pobladores a escalar o hacer actividad física. ¡Miles de escaleras y más altura para una foto!',
       },
       {
-        url: viajeAsset('destino-6-foto-3.svg'),
+        tipo: 'foto',
+        titulo: 'Como en casa',
+        url: cajamarca('imagen3.jpg'),
         descripcion:
-          'Descripción de la foto 3 del Destino 6. Este es el último espacio de prueba del álbum; hazlo completamente tuyo.',
+          'Lugares donde siempre te escucho decir que te sientes en casa o que te gustaría vivir en el campo, como buena ñañita que eres, jaja. Desde muy pequeños ya íbamos a ese humilde pueblo llamado ciudad.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'El castillo y sus tik toks',
+        url: cajamarca('imagen4.jpg'),
+        descripcion:
+          'Mi madre hermosa: el castillo donde conocimos y donde hicieron miles de tik toks junto a mi papá. Siempre posando y siempre acompañando al paisaje, hermoso y joven como tú, jaja.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'La reserva',
+        url: cajamarca('imagen5.png'),
+        descripcion:
+          'La reserva con miles de animales imponentes: desde osos hasta toros o jaguares. ¿Cómo? Ni idea, pero vimos de todo. Me acuerdo de que mi papá se cansó nada más subir. ¡Una caminata larga para ver todo y encima de subida! Qué desgraciados.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Naturaleza y raíces',
+        url: cajamarca('imagen6.jpg'),
+        descripcion:
+          'Un lugar donde siempre fortalecemos nuestras raíces serranas, conectando con la naturaleza y hasta con el oxígeno más fresco.',
       },
     ],
   },

@@ -138,8 +138,8 @@ export default function ViajesView({
               transition={{ delay: 0.22, duration: 0.45 }}
               className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-amber-100/75 sm:text-base"
             >
-              Mamá, abre cada recuerdo y elige tus 3 viajes favoritos. Cuando el
-              podio esté completo, recibirás el primer fragmento de la llave.
+              Mamá, abre cada recuerdo y elige tus 3 favoritos. Cuando el podio
+              esté completo, recibirás el primer fragmento de la llave.
             </motion.p>
           </header>
 
