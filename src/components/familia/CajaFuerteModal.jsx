@@ -107,7 +107,7 @@ export default function CajaFuerteModal({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="relative w-full max-w-2xl bg-stone-900 border-2 border-amber-500/40 rounded-3xl p-4 sm:p-6 shadow-[0_0_60px_rgba(245,158,11,0.25)] text-amber-50 overflow-hidden my-auto"
+          className="relative w-full max-w-2xl bg-stone-900 border-2 border-amber-500/40 rounded-3xl p-3 sm:p-6 shadow-[0_0_60px_rgba(245,158,11,0.25)] text-amber-50 overflow-hidden my-auto"
         >
           {/* Botón cerrar */}
           <button
@@ -137,13 +137,13 @@ export default function CajaFuerteModal({
           <motion.div
             animate={shake ? { x: [-8, 8, -6, 6, -3, 3, 0] } : {}}
             transition={{ duration: 0.45 }}
-            className="relative w-full aspect-[2752/1536] rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl bg-stone-950"
+            className="relative w-full aspect-[2752/1536] rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl bg-stone-950 sm:shadow-2xl shadow-[0_0_40px_rgba(245,158,11,0.3),0_8px_32px_rgba(0,0,0,0.9)]"
           >
             {/* Imagen de fondo original con los 3 recuadros */}
             <img
               src={CAJA_FUERTE_CONFIG.backgroundImage}
               alt="Panel de la caja fuerte"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover sm:object-cover object-contain sm:[filter:none] [filter:brightness(1.12)_contrast(1.1)_saturate(1.15)]"
               draggable={false}
             />
 
@@ -170,7 +170,7 @@ export default function CajaFuerteModal({
                     onChange={(e) => handleChange(index, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(index, e)}
                     disabled={isSuccess}
-                    className={`w-full h-full text-center font-mono font-black text-3xl sm:text-5xl md:text-6xl text-stone-900 bg-white/90 rounded-lg sm:rounded-xl border-2 transition-all focus:outline-none focus:ring-4 focus:ring-amber-400 focus:bg-white ${
+                    className={`w-full h-full text-center font-mono font-black text-4xl sm:text-5xl md:text-6xl text-stone-900 bg-white/90 rounded-lg sm:rounded-xl border-2 transition-all focus:outline-none focus:ring-4 focus:ring-amber-400 focus:bg-white ${
                       isSuccess
                         ? 'border-emerald-500 bg-emerald-100 text-emerald-900 ring-4 ring-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.8)]'
                         : errorMsg

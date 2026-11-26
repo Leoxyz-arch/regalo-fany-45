@@ -54,7 +54,7 @@ const FOTOS_GRAN_PUERTA = [
     url: granPuertaAsset('imagen5.jpg'),
     titulo: '45 años llenos de amor 🎂',
     rotacion: -3,
-    desktopPos: 'left-1/2 -translate-x-1/2 top-2 xl:top-4',
+    desktopPos: 'left-1/2 -translate-x-1/2 bottom-10 xl:bottom-14',
     duracion: 3.6,
   },
 ];
@@ -193,7 +193,7 @@ export default function CelebrationModal({
               <span>¡La Gran Puerta ha sido abierta!</span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-300 drop-shadow-[0_2px_15px_rgba(251,191,36,0.4)]">
+            <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-300 to-pink-400 [text-shadow:none] drop-shadow-[0_0_20px_rgba(251,191,36,0.9)] animate-pulse" style={{ animationDuration: '2.5s' }}>
               ¡Feliz Cumpleaños #45, Fany!
             </h2>
             <p className="text-xs sm:text-sm text-amber-300/90 font-medium mt-1">
