@@ -22,7 +22,7 @@ const FOTOS_GRAN_PUERTA = [
     url: granPuertaAsset('imagen1.jpg'),
     titulo: 'Recuerdos inolvidables ✨',
     rotacion: -6,
-    desktopPos: 'left-3 top-10 xl:left-8 xl:top-14',
+    desktopPos: 'left-3 top-6 xl:left-8 xl:top-8',
     duracion: 3.2,
   },
   {
@@ -30,7 +30,7 @@ const FOTOS_GRAN_PUERTA = [
     url: granPuertaAsset('imagen2.jpg'),
     titulo: 'Momentos en familia ❤️',
     rotacion: 7,
-    desktopPos: 'right-3 top-12 xl:right-8 xl:top-16',
+    desktopPos: 'right-3 top-6 xl:right-8 xl:top-8',
     duracion: 3.8,
   },
   {
@@ -38,7 +38,7 @@ const FOTOS_GRAN_PUERTA = [
     url: granPuertaAsset('imagen3.jpg'),
     titulo: 'Risas que alegran la casa 😊',
     rotacion: -5,
-    desktopPos: 'left-4 bottom-16 xl:left-10 xl:bottom-20',
+    desktopPos: 'left-4 bottom-6 xl:left-10 xl:bottom-8',
     duracion: 3.5,
   },
   {
@@ -46,15 +46,15 @@ const FOTOS_GRAN_PUERTA = [
     url: granPuertaAsset('imagen4.jpg'),
     titulo: 'Mamá hermosa y consentida 👑',
     rotacion: 6,
-    desktopPos: 'right-4 bottom-18 xl:right-10 xl:bottom-22',
+    desktopPos: 'right-4 bottom-6 xl:right-10 xl:bottom-8',
     duracion: 4.1,
   },
   {
     id: 5,
     url: granPuertaAsset('imagen5.jpg'),
     titulo: '45 años llenos de amor 🎂',
-    rotacion: 4,
-    desktopPos: 'right-3 top-1/2 -translate-y-1/2 xl:right-6',
+    rotacion: -4,
+    desktopPos: 'left-3 top-[40%] xl:left-8',
     duracion: 3.6,
   },
 ];
