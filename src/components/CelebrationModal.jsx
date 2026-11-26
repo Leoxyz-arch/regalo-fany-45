@@ -53,8 +53,8 @@ const FOTOS_GRAN_PUERTA = [
     id: 5,
     url: granPuertaAsset('imagen5.jpg'),
     titulo: '45 años llenos de amor 🎂',
-    rotacion: -3,
-    desktopPos: 'left-1/2 -translate-x-1/2 bottom-10 xl:bottom-14',
+    rotacion: 4,
+    desktopPos: 'right-3 top-1/2 -translate-y-1/2 xl:right-6',
     duracion: 3.6,
   },
 ];
@@ -170,10 +170,10 @@ export default function CelebrationModal({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.88, y: 25 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="relative z-20 w-full max-w-xl sm:max-w-2xl bg-gradient-to-b from-stone-900 via-stone-900/95 to-stone-950 border-2 border-amber-400/60 rounded-3xl p-4 sm:p-7 shadow-[0_0_80px_rgba(251,191,36,0.35)] text-stone-100 my-auto max-h-[92vh] overflow-y-auto"
+          className="relative z-20 w-full max-w-xl sm:max-w-2xl bg-gradient-to-b from-stone-900 via-stone-900/95 to-stone-950 border-2 border-amber-400/60 rounded-3xl shadow-[0_0_80px_rgba(251,191,36,0.35)] text-stone-100 my-auto"
         >
-          {/* Botón superior de confeti */}
-          <div className="flex justify-center -mt-9 sm:-mt-11 mb-2">
+          {/* Botón superior de confeti — fuera del scroll, pegado al borde superior del modal */}
+          <div className="flex justify-center -mt-9 sm:-mt-11">
             <button
               type="button"
               onClick={triggerConfetti}
@@ -186,6 +186,9 @@ export default function CelebrationModal({
             </button>
           </div>
 
+          {/* Contenido scrolleable */}
+          <div className="max-h-[88vh] overflow-y-auto p-4 sm:p-7">
+
           {/* Encabezado Principal */}
           <header className="text-center mb-4">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300 text-[11px] sm:text-xs font-bold mb-2">
@@ -193,7 +196,7 @@ export default function CelebrationModal({
               <span>¡La Gran Puerta ha sido abierta!</span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-300 to-pink-400 [text-shadow:none] drop-shadow-[0_0_20px_rgba(251,191,36,0.9)] animate-pulse" style={{ animationDuration: '2.5s' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-yellow-300 drop-shadow-[0_2px_12px_rgba(251,191,36,0.6)]">
               ¡Feliz Cumpleaños #45, Fany!
             </h2>
             <p className="text-xs sm:text-sm text-amber-300/90 font-medium mt-1">
@@ -328,6 +331,7 @@ export default function CelebrationModal({
               <span>Reiniciar aventura</span>
             </button>
           </div>
+          </div>{/* fin contenido scrolleable */}
         </motion.div>
 
         {/* ============================================================== */}

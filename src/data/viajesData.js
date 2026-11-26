@@ -266,7 +266,7 @@ export const destinosViajes = [
         titulo: 'Como en casa',
         url: cajamarca('imagen3.jpg'),
         descripcion:
-          'Lugares donde siempre te escucho decir que te sientes en casa o que te gustaría vivir en el campo, como buena mameta que eres, jaja. Desde muy pequeños ya íbamos a ese humilde pueblo llamado ciudad.',
+          'Recuerdo cuando llegamos a este rincón y sin dudarlo dijiste que aquí te quedarías a vivir, como buena mameta que eres con el campo y la serenidad serrana, jaja. Los huertos, las chacras y ese olor a tierra mojada te tienen completamente enamorada. Y la verdad, siendo justos… tampoco es difícil entenderte. 🌿🏡',
       },
       {
         tipo: 'foto',
@@ -413,7 +413,7 @@ export const destinosViajes = [
         titulo: 'La casa del tío Arturo',
         url: pacasmayo('imagen2.jpg'),
         descripcion:
-          'Y cuando toca fiesta en Pacasmayo, la familia entera se junta sin que nadie avise dos veces. Las fechas especiales aquí se celebran con algarabía, risas hasta el amanecer y esa iluminación playera tan característica que convierte cualquier noche en algo memorable. Cada reunión con el tío Arturo y la tía Rosita es un caos organizado del que salimos con el corazón lleno y la barriga contenta. 🎊🌊',
+          'Siempre la pasamos en familia: hacemos actividades de playa y nos atrevemos a todo, ¡hasta mi primo se atreve a pescar! Cada vez que vamos, la casa de mi tío Arturo es más rústica y sorprendente, construida a mano. Es la clase de playa cómoda a la que siempre queremos volver.',
       },
       {
         tipo: 'foto',
