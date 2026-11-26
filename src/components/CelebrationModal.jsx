@@ -47,7 +47,7 @@ const FOTOS_GRAN_PUERTA = [
   {
     id: 5,
     url: granPuertaAsset('imagen5.jpg'),
-    titulo: '45 años llenos de amor 🎂',
+    titulo: '46 años llenos de amor 🎂',
     rotacion: -4,
     desktopPos: 'left-3 top-[40%] xl:left-8',
     duracion: 3.6,
@@ -200,7 +200,7 @@ export default function CelebrationModal({
             </div>
 
             <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-yellow-300 drop-shadow-[0_2px_12px_rgba(251,191,36,0.6)]">
-              ¡Feliz Cumpleaños #45, Fany!
+              ¡Feliz Cumpleaños #46, Fany!
             </h2>
             <p className="text-xs sm:text-sm text-amber-300/90 font-medium mt-1">
               De tus dos hijos y toda tu familia que te ama con el alma 💖
@@ -256,7 +256,7 @@ export default function CelebrationModal({
             </p>
 
             <p className="text-stone-300">
-              Hoy que cumples tus <strong>45 años</strong>, queremos unir nuestras voces en un solo mensaje
+              Hoy que cumples tus <strong>46 años</strong>, queremos unir nuestras voces en un solo mensaje
               gigante para decirte lo inmensamente agradecidos y orgullosos que estamos de ti. Eres, sin ninguna
               duda ni comparación alguna, <strong>¡la mejor madre que el mundo nos pudo haber dado!</strong> 👑❤️
             </p>

@@ -358,7 +358,7 @@ export default function ViajesView({
 
           <footer className="mt-auto pt-10 text-center">
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-amber-100/30">
-              Un álbum hecho con amor para Fany #45
+              Un álbum hecho con amor para Fany #46
             </p>
           </footer>
         </div>

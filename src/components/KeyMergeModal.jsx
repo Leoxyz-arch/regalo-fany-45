@@ -89,7 +89,7 @@ export default function KeyMergeModal({ isOpen = false, onComplete }) {
               <div className="w-full h-full rounded-full bg-stone-950 flex flex-col items-center justify-center">
                 <Key className="w-14 h-14 text-yellow-300 drop-shadow-[0_0_12px_rgba(251,191,36,0.9)]" />
                 <span className="text-[10px] font-black text-amber-400 tracking-wider">
-                  FANY #45
+                  FANY #46
                 </span>
               </div>
             </motion.div>

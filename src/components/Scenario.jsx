@@ -38,7 +38,7 @@ export default function Scenario({
         {/* Scenario Graphic Image */}
         <img
           src={bgImageUrl}
-          alt="Escenario Habitación Cumpleaños Fany 45"
+          alt="Escenario Habitación Cumpleaños Fany 46"
           className="w-full h-full object-contain block pointer-events-none select-none"
           draggable={false}
         />

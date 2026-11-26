@@ -257,7 +257,7 @@ export default function CajaFuerteModal({
               >
                 <p className="text-[10px] uppercase tracking-wider font-bold">3.º Naty</p>
                 <p className="text-base sm:text-lg font-black font-mono mt-0.5">
-                  {dollsStatus.naty ? '5' : '?'}
+                  {dollsStatus.naty ? '6' : '?'}
                 </p>
               </div>
             </div>

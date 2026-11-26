@@ -1,12 +1,19 @@
 // Audio synthesizer and sound manager using Web Audio API + HTML5 Audio
-// Provides background music loop (musica.mp3) with mute toggle,
-// plus zero-dependency sound effects for candles, keys, doors, and celebration.
+// Provides background music playlist loop (musica1 -> musica2 -> musica3 -> repeat)
+// with mute toggle, plus zero-dependency sound effects for candles, keys, doors, and celebration.
+
+const BG_PLAYLIST = [
+  'audio/musica1.mp3',
+  'audio/musica2.mp3',
+  'audio/musica3.mp3',
+];
 
 class SoundManager {
   constructor() {
     this.ctx = null;
     this.isMuted = false;
     this.bgAudio = null;
+    this.currentTrackIndex = 0;
     this.bgOscillators = [];
     this.isMusicPlaying = false;
     this.hasUserInteracted = false;
@@ -17,19 +24,24 @@ class SoundManager {
     }
   }
 
-  // Inicializa el reproductor de musica.mp3
+  getTrackUrl(index) {
+    return `${import.meta.env.BASE_URL}${BG_PLAYLIST[index]}`;
+  }
+
+  // Inicializa el reproductor en cola de musica1, musica2 y musica3 en bucle
   initBgAudio() {
     try {
-      const audioUrl = `${import.meta.env.BASE_URL}audio/musica.mp3`;
-      this.bgAudio = new Audio(audioUrl);
-      this.bgAudio.loop = true;
+      this.bgAudio = new Audio(this.getTrackUrl(this.currentTrackIndex));
       this.bgAudio.volume = 0.38; // Volumen agradable que permite escuchar los efectos
       this.bgAudio.preload = 'auto';
 
-      // Garantía de bucle infinito en navegadores móviles
+      // Al terminar una pista, avanza a la siguiente y vuelve al inicio (índice 0) en bucle
       this.bgAudio.addEventListener('ended', () => {
-        if (!this.isMuted && this.bgAudio) {
-          this.bgAudio.currentTime = 0;
+        if (!this.bgAudio) return;
+        this.currentTrackIndex = (this.currentTrackIndex + 1) % BG_PLAYLIST.length;
+        this.bgAudio.src = this.getTrackUrl(this.currentTrackIndex);
+        this.bgAudio.currentTime = 0;
+        if (!this.isMuted) {
           this.bgAudio.play().catch(() => {});
         }
       });

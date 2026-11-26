@@ -54,7 +54,7 @@ export const DOLL_CONFIG = {
     id: 'naty',
     name: 'Naty',
     role: 'Hija menor',
-    number: '5',
+    number: '6',
     position: {
       left: '77%',
       top: '55%',
@@ -67,7 +67,7 @@ export const DOLL_CONFIG = {
     images: {
       initial: armarioAsset('NatyIncial.png'),
       question: armarioAsset('NatyPregunta.png'),
-      answer: armarioAsset('NatyRespuesta.png'),
+      answer: armarioAsset('NatyRespuesta.png?v=2'),
     },
     badgeColor: 'from-rose-500 to-pink-600',
     glowColor: 'rgba(244, 114, 182, 0.4)',
@@ -75,8 +75,8 @@ export const DOLL_CONFIG = {
 };
 
 export const CAJA_FUERTE_CONFIG = {
-  // Código secreto que abre la caja fuerte: 0 (Leo), 4 (Papá), 5 (Naty)
-  targetCode: '045',
+  // Código secreto que abre la caja fuerte: 0 (Leo), 4 (Papá), 6 (Naty)
+  targetCode: '046',
   backgroundImage: armarioAsset('PanelDeCaja.jpg'),
   // Coordenadas porcentuales exactas de los 3 recuadros blancos en PanelDeCaja.jpg (2752x1536)
   boxes: [

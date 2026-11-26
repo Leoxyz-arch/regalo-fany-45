@@ -1,6 +1,6 @@
 export const projectMeta = {
   recipient: 'Fany',
-  milestone: 45,
+  milestone: 46,
   creators: {
     son: 'Hijo mayor (20 años)',
     daughter: 'Hija menor',
@@ -58,7 +58,7 @@ export const HOTSPOTS = {
         description:
           'Mamá, gracias por cada viaje, cada paseo y cada aventura que hemos compartido. Eres nuestra mejor compañera de ruta y la que siempre llena el camino de risas y alegría.',
         quote: '«El mundo es más brillante cuando lo recorremos contigo.»',
-        childrenNote: 'Con amor de tus dos hijos para tus 45 años ✨',
+        childrenNote: 'Con amor de tus dos hijos para tus 46 años ✨',
       },
     },
     familia: {

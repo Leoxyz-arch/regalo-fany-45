@@ -23,7 +23,7 @@ export default function Navbar({
         <div>
           <div className="flex items-center gap-1.5">
             <h1 className="text-sm sm:text-base font-bold tracking-tight text-amber-100 flex items-center gap-1">
-              Fany <span className="text-amber-400 font-extrabold">#45</span>
+              Fany <span className="text-amber-400 font-extrabold">#46</span>
             </h1>
             <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse hidden xs:inline" />
           </div>
