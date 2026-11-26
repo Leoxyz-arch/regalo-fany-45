@@ -6,6 +6,7 @@ import KeyMergeModal from './components/KeyMergeModal';
 import CelebrationModal from './components/CelebrationModal';
 import LockedToast from './components/LockedToast';
 import ViajesView from './views/ViajesView';
+import FamiliaView from './views/FamiliaView';
 import { HOTSPOTS } from './data/config';
 import { soundManager } from './utils/audio';
 
@@ -113,6 +114,20 @@ export default function App() {
     setActiveDoorModal(null);
   };
 
+  // Award the second fragment when the Familia safe is unlocked
+  const handleAwardFamiliaKey = () => {
+    if (!hasRightKey) {
+      soundManager.playKeyFound();
+      setHasRightKey(true);
+    }
+  };
+
+  // Close the Familia room and return to the candle room
+  const handleCloseFamilia = () => {
+    soundManager.playClick();
+    setActiveDoorModal(null);
+  };
+
   // Complete Key Merge & Transition to Celebration
   const handleCompleteMerge = () => {
     setIsMergingKeys(false);
@@ -180,14 +195,21 @@ export default function App() {
         />
       )}
 
-      {/* Side Door Key Fragment Modal (Familia placeholder) */}
-      {activeDoorModal && activeDoorModal !== 'viajes' && (
+      {/* Door 2: Familia Wardrobe Minigame */}
+      {activeDoorModal === 'familia' && (
+        <FamiliaView
+          hasKey={hasRightKey}
+          onAwardKey={handleAwardFamiliaKey}
+          onBack={handleCloseFamilia}
+        />
+      )}
+
+      {/* Fallback Key Fragment Modal */}
+      {activeDoorModal && activeDoorModal !== 'viajes' && activeDoorModal !== 'familia' && (
         <KeyFragmentModal
           door={HOTSPOTS.doors[activeDoorModal]}
           isOpen={!!activeDoorModal}
-          isAlreadyCollected={
-            activeDoorModal === 'viajes' ? hasLeftKey : hasRightKey
-          }
+          isAlreadyCollected={hasRightKey}
           onCollectAndClose={() => handleCollectKey(activeDoorModal)}
         />
       )}
