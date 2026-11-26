@@ -264,7 +264,7 @@ export const destinosViajes = [
       {
         tipo: 'foto',
         titulo: 'Como en casa',
-        url: cajamarca('imagen3.jpg'),
+        url: cajamarca('imagen3.jpg?v=2'),
         descripcion:
           'Recuerdo cuando llegamos a este rincón y sin dudarlo dijiste que aquí te quedarías a vivir, como buena mameta que eres con el campo y la serenidad serrana, jaja. Los huertos, las chacras y ese olor a tierra mojada te tienen completamente enamorada. Y la verdad, siendo justos… tampoco es difícil entenderte. 🌿🏡',
       },
