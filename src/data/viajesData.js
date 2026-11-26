@@ -25,6 +25,7 @@ const puntasal = (fileName) => viajeAsset(`puntasal/${fileName}`);
 const malabrigo = (fileName) => viajeAsset(`malabrigo/${fileName}`);
 const huaraz = (fileName) => viajeAsset(`huaraz/${fileName}`);
 const chiclayo = (fileName) => viajeAsset(`chiclayo/${fileName}`);
+const tembladera = (fileName) => viajeAsset(`tembladera/${fileName}`);
 
 export const destinosViajes = [
   {
@@ -536,6 +537,39 @@ export const destinosViajes = [
   {
     id: 'tembladera',
     titulo: 'Tembladera',
+    fecha: 'Raíces e historias del papá',
+    lugar: 'Tembladera, Cajamarca',
+    portada: tembladera('portada.jpg'),
+    fotos: [
+      {
+        tipo: 'foto',
+        titulo: 'El lugar donde vivió tu esposo',
+        url: tembladera('imagen1.jpg'),
+        descripcion:
+          'El lugar donde vivió tu esposo, al que fuiste cuando yo ni existía. Conociste lo amables que eran los pobladores, su comida especial, pequeño pero acogedor… ¡y las miles de historias que pasó mi papá ahí!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'La casa de mi papá Jaime',
+        url: tembladera('imagen2.jpeg'),
+        descripcion:
+          '¡La casa de mi papá Jaime! Un lugar mítico y emblemático para muchos estudiantes de aquí, demostrando lo ordenado, profesional y artístico que era mi abuelo para ser director de tantos rebeldes como mi papá, jaja.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Experiencia de campo completa',
+        url: tembladera('imagen3.jpg'),
+        descripcion:
+          'Comida, festivales, pan, descubrimientos, serpientes, armas… ¡y cuy frito! La verdad, una de las experiencias de campo más completas que hemos vivido. Yo aún no me acostumbro a eso: bichos por todos lados, murciélagos y poco Wi-Fi… sin duda no es un lugar para mí, pero de verdad que se vive una desconexión total y una conexión única con la naturaleza.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Un pueblo hermoso y bondadoso',
+        url: tembladera('imagen4.png'),
+        descripcion:
+          'Es un pueblo hermoso, con gente tan bondadosa. No hay mucho que hacer, pero ahí estuvieron las primeras veces de varias cosas: el cine en su tiempo, los carnavales… cada detalle tan mínimo se volvía algo gigante ahí. Aún recuerdo cuando me fui solo durante unos días para desconectarme, jaja. Sin dudas, el mejor lugar que mi papá se sabe al revés y al derecho.',
+      },
+    ],
   },
   {
     id: 'ruffo',

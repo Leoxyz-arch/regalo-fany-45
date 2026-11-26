@@ -57,6 +57,14 @@ const FOTOS_GRAN_PUERTA = [
     desktopPos: 'left-3 top-[40%] xl:left-8',
     duracion: 3.6,
   },
+  {
+    id: 6,
+    url: granPuertaAsset('imagen6.jpg'),
+    titulo: 'Siempre juntos 💛',
+    rotacion: 5,
+    desktopPos: 'right-3 top-[40%] xl:right-8',
+    duracion: 3.9,
+  },
 ];
 
 export default function CelebrationModal({
