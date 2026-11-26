@@ -95,10 +95,10 @@ export const destinosViajes = [
     fotos: [
       {
         tipo: 'foto',
-        titulo: 'Donde empezó todo',
-        url: trujillo('imagen1.jpg'),
+        titulo: 'Navidades y luces de Trujillo',
+        url: trujillo('imagen1.jpeg'),
         descripcion:
-          'El lugar donde iniciamos la historia, el lugar donde empezó todo. Desde que tenemos conocimiento, hicimos miles de recuerdos.',
+          '¡Las fechas festivas en Trujillo son otro nivel! La ciudad se llena de luces, adornos y una energía que no se ve en ningún otro lado. Recuerdo esas navidades juntos paseando por el centro histórico iluminado, las plazas decoradas hasta el techo y la gente disfrutando en familia. Esos momentos quedan grabados para siempre. 🎄✨',
       },
       {
         tipo: 'foto',
@@ -116,10 +116,10 @@ export const destinosViajes = [
       },
       {
         tipo: 'foto',
-        titulo: 'Llenos de abejas',
+        titulo: 'La iluminación que enamora',
         url: trujillo('imagen4.jpg'),
         descripcion:
-          'Hasta los alrededores de Trujillo: experiencias únicas, lugares y experiencias que jamás imaginamos hacer. ¡Todo el cuerpo lleno de abejas!',
+          'Y si hay algo que Trujillo sabe hacer bien, es iluminar sus calles y plazas cuando llegan las fechas especiales. Los parques decorados, las ferias navideñas y esos paseos nocturnos en familia donde nos sacamos mil fotos y terminamos comiendo algo rico en algún rincón del centro. Momentos que, con todo y la algarabía, siguen siendo los más divertidos. 🌟🎉',
       },
       {
         tipo: 'foto',
@@ -413,7 +413,7 @@ export const destinosViajes = [
         titulo: 'La casa del tío Arturo',
         url: pacasmayo('imagen2.jpg'),
         descripcion:
-          'Siempre la pasamos en familia: hacemos actividades de playa y nos atrevemos a todo, ¡hasta mi primo se atreve a pescar! Cada vez que vamos, la casa de mi tío Arturo es más rústica y sorprendente, construida a mano. Es la clase de playa cómoda a la que siempre queremos volver.',
+          'Y cuando toca fiesta en Pacasmayo, la familia entera se junta sin que nadie avise dos veces. Las fechas especiales aquí se celebran con algarabía, risas hasta el amanecer y esa iluminación playera tan característica que convierte cualquier noche en algo memorable. Cada reunión con el tío Arturo y la tía Rosita es un caos organizado del que salimos con el corazón lleno y la barriga contenta. 🎊🌊',
       },
       {
         tipo: 'foto',
