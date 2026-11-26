@@ -26,6 +26,7 @@ const malabrigo = (fileName) => viajeAsset(`malabrigo/${fileName}`);
 const huaraz = (fileName) => viajeAsset(`huaraz/${fileName}`);
 const chiclayo = (fileName) => viajeAsset(`chiclayo/${fileName}`);
 const tembladera = (fileName) => viajeAsset(`tembladera/${fileName}`);
+const lima = (fileName) => viajeAsset(`lima/${fileName}`);
 
 export const destinosViajes = [
   {
@@ -104,7 +105,7 @@ export const destinosViajes = [
       {
         tipo: 'foto',
         titulo: 'Siempre volvemos',
-        url: trujillo('imagen2.jpg'),
+        url: trujillo('imagen2.jpg?v=2'),
         descripcion:
           'Hasta la fecha regresamos aquí por mis estudios, y agradezco mucho eso: no dejarme solo y siempre apoyarme. Exprimimos todo Trujillo juntos en miles de lugares.',
       },
@@ -394,6 +395,60 @@ export const destinosViajes = [
   {
     id: 'lima',
     titulo: 'Lima',
+    fecha: 'La capital que nunca duerme',
+    lugar: 'Lima Metropolitana',
+    portada: lima('portada.png'),
+    fotos: [
+      {
+        tipo: 'foto',
+        titulo: 'Exprimir la capital al máximo',
+        url: lima('imagen1.png'),
+        descripcion:
+          'Lima, la capital del país: siempre vamos a las mejores zonas a exprimirla al máximo. Hay miles de eventos y sigue siendo la ciudad favorita de tus hijos para gastar, gastar y gastar, jaja. ¡Es el lugar donde pasa de todo y hasta te cruzas con celebridades peruanas!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Una ciudad gigante por descubrir',
+        url: lima('imagen2.jpg'),
+        descripcion:
+          'En Lima todavía nos quedan muchísimos rincones por conocer. Es una mezcla única donde conviven turistas de todo el mundo, conciertos gigantes, celebridades y hasta sus zonas movidas. Vamos desde que éramos muy niños y no deja de sorprendernos cómo sigue creciendo cada año.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Hoteles pitucos y paisajes hermosos',
+        url: lima('imagen3.png'),
+        descripcion:
+          'Desde muy pequeños hasta la actualidad seguimos volviendo, pero cada vez más modernos: escogemos hoteles residenciales y bien pitucos, comemos rico, compramos y dormimos como si nos sobrara la plata, jaja. Todo vale la pena cuando ves esos paisajes frente al mar.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Modernidad total (que no se note)',
+        url: lima('imagen4.jpeg'),
+        descripcion:
+          '¡Mira esta foto! Modernidad total y eso que ya tiene sus años; mucho más avanzada que las demás ciudades donde hemos estado. ¡Que no se note ni un poquito la centralización del país en la capital, jaja!',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'La reina de las selfies',
+        url: lima('imagen5.png'),
+        descripcion:
+          'Mi madre hermosa brillando en todos los lugares. Aquí en Lima siempre salen sus mejores selfies, esas que al toque terminan de foto de perfil con toda la elegancia. ✨📸',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Gastronomía, conciertos y aventuras',
+        url: lima('imagen6.jpg'),
+        descripcion:
+          'Comida espectacular en cada esquina, paseos por los alrededores, conciertos inolvidables y personas de todo tipo. Cada escapada a Lima termina regalándonos experiencias únicas que no se repiten en ningún otro lugar.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Gamarra, el Callao y lo que falta',
+        url: lima('imagen7.jpg'),
+        descripcion:
+          'El Parque de las Leyendas, centros comerciales gigantes, el Callao, Gamarra… ¡hay de todo! En serio nos falta muchísimo por recorrer y experimentar; yo todavía tengo pendiente conocer Gamarra como se debe. ¡Ya tocará volver con ganas!',
+      },
+    ],
   },
   {
     id: 'pacasmayo',
