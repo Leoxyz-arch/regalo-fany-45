@@ -27,6 +27,7 @@ const huaraz = (fileName) => viajeAsset(`huaraz/${fileName}`);
 const chiclayo = (fileName) => viajeAsset(`chiclayo/${fileName}`);
 const tembladera = (fileName) => viajeAsset(`tembladera/${fileName}`);
 const lima = (fileName) => viajeAsset(`lima/${fileName}`);
+const chimbote = (fileName) => viajeAsset(`chimbote/${fileName}`);
 
 export const destinosViajes = [
   {
@@ -347,6 +348,60 @@ export const destinosViajes = [
   {
     id: 'chimbote',
     titulo: 'Chimbote',
+    fecha: 'El segundo capítulo de nuestra vida',
+    lugar: 'Nuevo Chimbote, Áncash',
+    portada: chimbote('portada.jpg'),
+    fotos: [
+      {
+        tipo: 'foto',
+        titulo: 'Empezar desde cero junto a papá',
+        url: chimbote('imagen1.jpg'),
+        descripcion:
+          'El segundo capítulo de mi vida: cuando nos mudamos para estar junto a mi papá. Empezamos desde cero, pero construimos una larga historia y nuestra segunda casa… ¡pasando por un montón de casas alquiladas, jaja! Eso sí, con demasiados momentos únicos y especiales.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Infancia, colegios y primeros pasos',
+        url: chimbote('imagen2.jpg'),
+        descripcion:
+          'Desde muy pequeños: la formación y el crecimiento de mi hermana, DePekes, el teacher Feijóo, Innova Schools, la casa del señor Abram, los primeros pasos de Naty y las tardes en el Polideportivo. De verdad fueron demasiados años juntos, demasiada historia y recuerdos que no se olvidan nunca.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'La más joven del grupo',
+        url: chimbote('Imagen3.jpg'),
+        descripcion:
+          'Tus amigas, las amistades de Naty, las de Leo, tus mejores amigas, los mejores planes, el grupo de jóvenes y todos con los que compartías… ¡y siempre saliendo tú como la más joven, jaja! De verdad que cultivaste amistades de todo corazón.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Cumpleaños y fiestas en familia',
+        url: chimbote('imagen4.jpg'),
+        descripcion:
+          'Pasamos miles de cumpleaños, navidades y años nuevos junto a la familia de mi tía Mona y mi tía Pocha. Conocimos de todo… en serio se me escapa una lágrima al recordar todo lo que vivimos allí.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Música, graduaciones y Ruffo',
+        url: chimbote('imagen5.jpg'),
+        descripcion:
+          'Aunque ahora no vivamos ahí, ahí dimos los primeros pasos de todo: el nacimiento del talento musical de Naty, graduaciones, amistades de todo tipo y esas navidades que a veces volvemos a celebrar junto a Ruffo.',
+      },
+      {
+        tipo: 'foto',
+        titulo: 'Pura nostalgia',
+        url: chimbote('imagen6.jpg'),
+        descripcion:
+          'Mira esta imagen: Ruffo pequeño, Naty pequeña… ¿en serio no te da nostalgia ver cuánto hemos crecido desde entonces? ❤️',
+      },
+      {
+        tipo: 'foto',
+        titulo: '«¡Nuevo, Nuevo Chimbote!»',
+        url: chimbote('imagen7.jpeg'),
+        descripcion:
+          'Aunque ahora estemos en otro lado, sigue siendo nuestra casa con más momentos vividos. Da verdadera nostalgia recordar las miles de cosas hechas y recuerdos guardados. En lo personal, fue un viaje desde cero que creció sintiéndose como un verdadero «¡Nuevo, Nuevo Chimbote!».',
+      },
+    ],
   },
   {
     id: 'huaraz',
