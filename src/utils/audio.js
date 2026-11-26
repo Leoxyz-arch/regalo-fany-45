@@ -1,13 +1,62 @@
-// Audio synthesizer and sound manager using Web Audio API
-// Provides zero-dependency sound effects out of the box,
-// with graceful fallback if audio files are not placed in public/audio/
+// Audio synthesizer and sound manager using Web Audio API + HTML5 Audio
+// Provides background music loop (musica.mp3) with mute toggle,
+// plus zero-dependency sound effects for candles, keys, doors, and celebration.
 
 class SoundManager {
   constructor() {
     this.ctx = null;
     this.isMuted = false;
+    this.bgAudio = null;
     this.bgOscillators = [];
     this.isMusicPlaying = false;
+    this.hasUserInteracted = false;
+
+    if (typeof window !== 'undefined') {
+      this.initBgAudio();
+      this.setupAutoplayUnlock();
+    }
+  }
+
+  // Inicializa el reproductor de musica.mp3
+  initBgAudio() {
+    try {
+      const audioUrl = `${import.meta.env.BASE_URL}audio/musica.mp3`;
+      this.bgAudio = new Audio(audioUrl);
+      this.bgAudio.loop = true;
+      this.bgAudio.volume = 0.38; // Volumen agradable que permite escuchar los efectos
+      this.bgAudio.preload = 'auto';
+
+      // Garantía de bucle infinito en navegadores móviles
+      this.bgAudio.addEventListener('ended', () => {
+        if (!this.isMuted && this.bgAudio) {
+          this.bgAudio.currentTime = 0;
+          this.bgAudio.play().catch(() => {});
+        }
+      });
+    } catch (e) {
+      console.warn('No se pudo inicializar Audio de fondo:', e);
+      this.bgAudio = null;
+    }
+  }
+
+  // Desbloqueo automático al primer clic o toque en pantalla (política de navegadores)
+  setupAutoplayUnlock() {
+    const unlock = () => {
+      this.hasUserInteracted = true;
+      this.initContext();
+      if (!this.isMuted && !this.isMusicPlaying) {
+        this.startBgMusic();
+      }
+      window.removeEventListener('pointerdown', unlock);
+      window.removeEventListener('touchstart', unlock);
+      window.removeEventListener('click', unlock);
+      window.removeEventListener('keydown', unlock);
+    };
+
+    window.addEventListener('pointerdown', unlock, { passive: true });
+    window.addEventListener('touchstart', unlock, { passive: true });
+    window.addEventListener('click', unlock, { passive: true });
+    window.addEventListener('keydown', unlock, { passive: true });
   }
 
   initContext() {
@@ -37,10 +86,97 @@ class SoundManager {
     this.isMuted = muted;
     if (this.isMuted) {
       this.stopBgMusic();
+    } else {
+      this.initContext();
+      this.startBgMusic();
     }
   }
 
-  // Soft flame ignition sound
+  // Reproduce musica.mp3 en bucle continuo
+  startBgMusic() {
+    if (this.isMuted) return;
+
+    if (this.bgAudio) {
+      this.bgAudio
+        .play()
+        .then(() => {
+          this.isMusicPlaying = true;
+        })
+        .catch(() => {
+          // Si el navegador requiere interacción previa, se activará en el primer clic
+        });
+      return;
+    }
+
+    // Fallback sintetizado si el archivo de audio no existiera
+    this.startSynthDrone();
+  }
+
+  // Pausa la música de fondo
+  stopBgMusic() {
+    this.isMusicPlaying = false;
+    if (this.bgAudio) {
+      try {
+        this.bgAudio.pause();
+      } catch {
+        // Ignorar
+      }
+    }
+    this.stopSynthDrone();
+  }
+
+  // Drone sintetizado de respaldo
+  startSynthDrone() {
+    if (this.isMuted || this.bgOscillators.length > 0) return;
+    this.initContext();
+    if (!this.ctx) return;
+
+    try {
+      this.isMusicPlaying = true;
+      const baseFreqs = [196.0, 293.66, 392.0];
+      this.bgOscillators = baseFreqs.map((freq) => {
+        const osc = this.ctx.createOscillator();
+        const filter = this.ctx.createBiquadFilter();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(600, this.ctx.currentTime);
+        gain.gain.setValueAtTime(0.02, this.ctx.currentTime);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start();
+        return { osc, gain };
+      });
+    } catch {
+      this.isMusicPlaying = false;
+    }
+  }
+
+  stopSynthDrone() {
+    if (!this.bgOscillators.length) return;
+    try {
+      this.bgOscillators.forEach(({ osc, gain }) => {
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.3);
+        setTimeout(() => {
+          try {
+            osc.stop();
+          } catch {
+            // Ya detenido
+          }
+        }, 300);
+      });
+      this.bgOscillators = [];
+    } catch {
+      // Ignorar
+    }
+  }
+
+  // Efectos de sonido (SFX)
   playCandleLight() {
     if (this.isMuted) return;
     this.initContext();
@@ -48,8 +184,6 @@ class SoundManager {
 
     try {
       const now = this.ctx.currentTime;
-
-      // Soft woosh / noise burst
       const bufferSize = this.ctx.sampleRate * 0.4;
       const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
       const output = buffer.getChannelData(0);
@@ -73,30 +207,26 @@ class SoundManager {
       whiteNoise.connect(filter);
       filter.connect(noiseGain);
       noiseGain.connect(this.ctx.destination);
-
       whiteNoise.start(now);
 
-      // Warm chime tone
       const osc = this.ctx.createOscillator();
       const oscGain = this.ctx.createGain();
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(523.25, now); // C5
-      osc.frequency.exponentialRampToValueAtTime(659.25, now + 0.3); // E5
+      osc.frequency.setValueAtTime(523.25, now);
+      osc.frequency.exponentialRampToValueAtTime(659.25, now + 0.3);
 
       oscGain.gain.setValueAtTime(0.12, now);
       oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
 
       osc.connect(oscGain);
       oscGain.connect(this.ctx.destination);
-
       osc.start(now);
       osc.stop(now + 0.6);
     } catch {
-      // Audio fallback silent
+      // Fallback silencioso
     }
   }
 
-  // Key fragment found chime
   playKeyFound() {
     if (this.isMuted) return;
     this.initContext();
@@ -104,7 +234,7 @@ class SoundManager {
 
     try {
       const now = this.ctx.currentTime;
-      const notes = [587.33, 739.99, 880.0, 1174.66]; // D5, F#5, A5, D6 arpeggio
+      const notes = [587.33, 739.99, 880.0, 1174.66];
 
       notes.forEach((freq, idx) => {
         const osc = this.ctx.createOscillator();
@@ -123,11 +253,10 @@ class SoundManager {
         osc.stop(now + idx * 0.08 + 0.8);
       });
     } catch {
-      // Audio fallback silent
+      // Fallback silencioso
     }
   }
 
-  // Locked door gentle knock / error rattle
   playLocked() {
     if (this.isMuted) return;
     this.initContext();
@@ -152,11 +281,10 @@ class SoundManager {
         osc.stop(now + delay + 0.06);
       });
     } catch {
-      // Audio fallback silent
+      // Fallback silencioso
     }
   }
 
-  // Key merge magical burst
   playKeyMerge() {
     if (this.isMuted) return;
     this.initContext();
@@ -183,11 +311,10 @@ class SoundManager {
         osc.stop(now + idx * 0.06 + 1.2);
       });
     } catch {
-      // Audio fallback silent
+      // Fallback silencioso
     }
   }
 
-  // Celebration fanfare
   playCelebration() {
     if (this.isMuted) return;
     this.initContext();
@@ -195,7 +322,7 @@ class SoundManager {
 
     try {
       const now = this.ctx.currentTime;
-      const chord = [523.25, 659.25, 783.99, 1046.5]; // C major chord
+      const chord = [523.25, 659.25, 783.99, 1046.5];
 
       chord.forEach((freq) => {
         const osc = this.ctx.createOscillator();
@@ -214,11 +341,10 @@ class SoundManager {
         osc.stop(now + 2.5);
       });
     } catch {
-      // Audio fallback silent
+      // Fallback silencioso
     }
   }
 
-  // Button click
   playClick() {
     if (this.isMuted) return;
     this.initContext();
@@ -241,63 +367,8 @@ class SoundManager {
       osc.start(now);
       osc.stop(now + 0.04);
     } catch {
-      // Audio fallback silent
+      // Fallback silencioso
     }
-  }
-
-  // Dreamy ambient music loop
-  startBgMusic() {
-    if (this.isMuted || this.isMusicPlaying) return;
-    this.initContext();
-    if (!this.ctx) return;
-
-    try {
-      this.isMusicPlaying = true;
-      // Soft ambient chord drone
-      const baseFreqs = [196.0, 293.66, 392.0]; // G3, D4, G4 warm pad
-      this.bgOscillators = baseFreqs.map((freq) => {
-        const osc = this.ctx.createOscillator();
-        const filter = this.ctx.createBiquadFilter();
-        const gain = this.ctx.createGain();
-
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
-
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(600, this.ctx.currentTime);
-
-        gain.gain.setValueAtTime(0.02, this.ctx.currentTime);
-
-        osc.connect(filter);
-        filter.connect(gain);
-        gain.connect(this.ctx.destination);
-
-        osc.start();
-        return { osc, gain };
-      });
-    } catch {
-      this.isMusicPlaying = false;
-    }
-  }
-
-  stopBgMusic() {
-    if (!this.isMusicPlaying) return;
-    try {
-      this.bgOscillators.forEach(({ osc, gain }) => {
-        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.5);
-        setTimeout(() => {
-          try {
-            osc.stop();
-          } catch {
-            // Already stopped
-          }
-        }, 500);
-      });
-      this.bgOscillators = [];
-    } catch {
-      // Ignore
-    }
-    this.isMusicPlaying = false;
   }
 }
 
