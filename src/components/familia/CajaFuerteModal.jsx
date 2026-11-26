@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Lock, Unlock, Key, CheckCircle2, AlertCircle, HelpCircle } from 'lucide-react';
-import { CAJA_FUERTE_CONFIG, DOLL_CONFIG } from '../../data/familiaData';
+import { X, Lock, Unlock, Key, AlertCircle, HelpCircle } from 'lucide-react';
+import { CAJA_FUERTE_CONFIG } from '../../data/familiaData';
 import { soundManager } from '../../utils/audio';
 
 export default function CajaFuerteModal({

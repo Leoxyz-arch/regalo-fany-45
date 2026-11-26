@@ -3,14 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import {
   Sparkles,
-  Heart,
   RotateCcw,
   Eye,
   X,
-  Cake,
-  UtensilsCrossed,
-  Sparkle,
-  PartyPopper,
   Camera,
 } from 'lucide-react';
 

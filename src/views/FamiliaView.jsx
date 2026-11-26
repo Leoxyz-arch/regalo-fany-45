@@ -7,7 +7,6 @@ import {
   Unlock,
   Sparkles,
   Users,
-  CheckCircle2,
 } from 'lucide-react';
 import { DOLL_CONFIG, CAJA_FUERTE_CONFIG } from '../data/familiaData';
 import { HOTSPOTS } from '../data/config';

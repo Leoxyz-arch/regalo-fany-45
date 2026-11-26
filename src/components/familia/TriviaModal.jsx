@@ -7,7 +7,6 @@ import {
   Sparkles,
   ArrowRight,
   Star,
-  RotateCcw,
 } from 'lucide-react';
 import { PREGUNTAS_FAMILIA } from '../../data/familiaData';
 import { soundManager } from '../../utils/audio';
